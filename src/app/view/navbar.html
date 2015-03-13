@@ -15,7 +15,7 @@
                 </li>
                 <li class="active"><a href="#">Contact Us</a>
                 </li>
-                <li class="active"><a href="#" ng-click="nav.logout()">Logout</a>
+                <li ng-show="nav.loggedIn()" class="active"><a href="#" ng-click="nav.logout()">Logout</a>
                 </li>
             </ul>
         </div>
