@@ -14,6 +14,32 @@
 
 // injector
 // endinjector
+.mask {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -99;
+    background-color: #eb9565;
+    background-image: url(http://andershede.com/wp-content/uploads/2014/07/Fermaten.svg) no-repeat fixed;
+    opacity: 0.5;
+}
+
+video#bgvid {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    background-size: cover;
+}
+
 form {
     margin-left: auto;
     margin-right: auto;
@@ -32,6 +58,7 @@ form {
     -webkit-box-shadow: 0 0 13px 3px rgba(0, 0, 0, .5);
     box-shadow: 0 0 13px 3px rgba(0, 0, 0, .5);
     overflow: hidden;
+    text-align: center;
 }
 
 input {
@@ -75,75 +102,27 @@ input.password {
     padding-left: 45px;
 }
 
-::-webkit-input-placeholder {
+.fblogin {
+    font-size: 2em;
     color: #fff;
+    font-weight: 200;
 }
 
-:-moz-placeholder {
+.sitterbtn,
+.ownerbtn {
+    margin-top: 1.5em;
+    border: 1px solid #000;
+    padding: 1ex 3em;
+    border-radius: 2px;
+    background-color: cornflowerblue;
     color: #fff;
+    font-size: 1.5em;
+    opacity: 0.7;
+    font-weight: 300;
 }
 
-::-moz-placeholder {
-    color: #fff;
-}
-
-:-ms-input-placeholder {
-    color: #fff;
-}
-
-.btn {
-    margin-top: 3em;
-    width: 138px;
-    height: 44px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
-    float: right;
-    border: 1px solid #253737;
-    background: #416b68;
-    background: -webkit-gradient(linear, left top, left bottom, from(#6da5a3), to(#416b68));
-    background: -webkit-linear-gradient(top, #6da5a3, #416b68);
-    background: -moz-linear-gradient(top, #6da5a3, #416b68);
-    background: -ms-linear-gradient(top, #6da5a3, #416b68);
-    background: -o-linear-gradient(top, #6da5a3, #416b68);
-    background-image: -ms-linear-gradient(top, #6da5a3 0%, #416b68 100%);
-    padding: 10.5px 21px;
-    -webkit-border-radius: 6px;
-    -moz-border-radius: 6px;
-    border-radius: 6px;
-    -webkit-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, inset rgba(255, 255, 255, 0.7) 0 1px 0;
-    -moz-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, inset rgba(255, 255, 255, 0.7) 0 1px 0;
-    box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, inset rgba(255, 255, 255, 0.7) 0 1px 0;
-    text-shadow: #333333 0 1px 0;
-    color: #e1e1e1;
-}
-
-.btn:hover {
-    border: 1px solid #253737;
-    text-shadow: #333333 0 1px 0;
-    background: #416b68;
-    background: -webkit-gradient(linear, left top, left bottom, from(#77b2b0), to(#416b68));
-    background: -webkit-linear-gradient(top, #77b2b0, #416b68);
-    background: -moz-linear-gradient(top, #77b2b0, #416b68);
-    background: -ms-linear-gradient(top, #77b2b0, #416b68);
-    background: -o-linear-gradient(top, #77b2b0, #416b68);
-    background-image: -ms-linear-gradient(top, #77b2b0 0%, #416b68 100%);
-    color: #fff;
-}
-
-.btn:active {
-    margin-top: 1px;
-    text-shadow: #333333 0 -1px 0;
-    border: 1px solid #253737;
-    background: #6da5a3;
-    background: -webkit-gradient(linear, left top, left bottom, from(#416b68), to(#416b68));
-    background: -webkit-linear-gradient(top, #416b68, #609391);
-    background: -moz-linear-gradient(top, #416b68, #6da5a3);
-    background: -ms-linear-gradient(top, #416b68, #6da5a3);
-    background: -o-linear-gradient(top, #416b68, #6da5a3);
-    background-image: -ms-linear-gradient(top, #416b68 0%, #6da5a3 100%);
-    color: #fff;
-    -webkit-box-shadow: rgba(255, 255, 255, 0) 0 1px 0, inset rgba(255, 255, 255, 0.7) 0 1px 0;
-    -moz-box-shadow: rgba(255, 255, 255, 0) 0 1px 0, inset rgba(255, 255, 255, 0.7) 0 1px 0;
-    box-shadow: rgba(255, 255, 255, 0) 0 1px 0, inset rgba(255, 255, 255, 0.7) 0 1px 0;
+.sitterbtn:hover,
+.ownerbtn:hover {
+    cursor: pointer;
+    opacity: 1;
 }

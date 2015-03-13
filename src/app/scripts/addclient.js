@@ -12,16 +12,17 @@ angular.module('whatsPup')
         this.userArray = {};
 
 
-        this.newUser = {
+        this.newClient = {
             email: '',
             name: '',
+
         };
 
-        this.addUser = function (user) {
+        this.addClient = function (user) {
             this.obj.$add(user);
             return this.newUser = {
                 email: '',
-                name: '',
+                name: ''
             };
         }
 

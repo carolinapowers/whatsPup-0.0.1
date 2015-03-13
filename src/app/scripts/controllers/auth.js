@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('whatsPup')
-    .factory('AuthCtrl', function ($firebaseArray, $firebaseObject) {
+    .controller('AuthCtrl', function ($firebaseArray, $firebaseObject) {
         var ref = new Firebase("https://whatspup.firebaseio.com/");
 
         this.login = function () {

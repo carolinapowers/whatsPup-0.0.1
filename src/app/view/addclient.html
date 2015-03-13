@@ -1,0 +1,92 @@
+<!--
+<!doctype html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+</head>
+<style type="text/css">
+    body {
+        background: #000;
+    }
+    
+    h2 {
+        color: white;
+    }
+    
+    h4 {
+        color: white;
+    }
+    
+    p {
+        color: darkgray;
+        padding-top: 1ex;
+        font-size: 2ex;
+    }
+    
+    .cust {
+        padding: 1em;
+        border-bottom: 1px solid white;
+    }
+    
+    .btn {
+        margin: 1em;
+        top: 2ex;
+    }
+</style>
+
+
+<body>
+-->
+<div class="container-fluid">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#/"><i class="fa fa-paw"></i> whatsPup</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav pull-right">
+                    <li class="active"><a href="#">Logout</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!--/.navbar-collapse -->
+        </div>
+    </div>
+    <h2>Customer Database</h2>
+    <form ng-submit="client.addClient(client.newClient)">
+
+        <input ng-model="client.newClient.name" name="name" placeholder="Client Name" class="password" required />
+        <input ng-model="client.newClient.email" name="emailaddress" placeholder=" Client E-mail" class="e-mail" type="e-mail" required />
+
+        <input name="submit" class="btn" type="submit" value="Add client" ng-click="app.login()" />
+
+    </form>
+
+
+    <hr>
+    <div ng-repeat="client in client.obj" class="row">
+        <div class="cust">
+            <a href="#/customers/{{ customer.$id }}"><h4>{{ client.name }} {{ customer.firstName }} </h4></a>
+            <p>{{ customer.pet }}</p>
+            <p>{{ customer.phone }} {{ client.email }}</p>
+            <p>{{ customer.address.street }} {{ customer.address.city }} {{customer.address.zip }}</p>
+            <a ng-href="#/customers/{{ customer.$id }}" ng-click="editCustomer(customer)" ng-show="signedIn() && customer.creatorUID === user.uid">
+                <button class="btn btn-lg btn-info">edit info</button>
+            </a>
+            <a ng-href="" ng-click="newVisit(customer)" ng-show="signedIn() && customer.creatorUID === user.uid">
+                <button class="btn btn-lg btn-success pull-right">new visit</button>
+            </a>
+        </div>
+
+    </div>
+
+</div>
+</div>
