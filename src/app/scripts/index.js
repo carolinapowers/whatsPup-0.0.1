@@ -20,11 +20,17 @@ angular.module('whatsPup', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', '
         controllerAs: 'client'
     })
 
+    .state('navbar', {
+        url: '/nav',
+        templateUrl: 'app/view/navbar.html',
+        controller: 'NavCtrl',
+        controllerAs: 'nav'
+    })
     $urlRouterProvider.otherwise('/');
 })
 
 .factory('Auth', function ($firebaseObject, $state) {
-    var auth = new Firebase('https://whatspup.firebaseio.com/client');
+    var auth = new Firebase('https://whatspup.firebaseio.com');
     var currentUser = {};
 
     return {
@@ -45,7 +51,7 @@ angular.module('whatsPup', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', '
         sitterlogin: function () {
 
             return auth.authWithOAuthPopup("facebook", function (error, authData) {
-                console.log(authData)
+                //                console.log(authData)
                 if (error) {
                     console.log("Login Failed!", error);
                 } else {
@@ -62,7 +68,8 @@ angular.module('whatsPup', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', '
          */
         logout: function () {
             auth.unauth();
-            console.log("hello")
+            $state.go('home');
+            console.log("hello");
         },
         /** Wrapper to allow the main controller to check if a user is currently 
          * Logged in currently

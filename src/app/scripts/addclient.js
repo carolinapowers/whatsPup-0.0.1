@@ -1,19 +1,13 @@
 'use strict';
 
 angular.module('whatsPup')
-    .controller('AddClientCtrl', function ($firebaseArray, $firebaseObject, Auth, $location) {
+    .controller('AddClientCtrl', function ($firebaseArray, $firebaseObject, Auth) {
 
         var userInfo = new Firebase('https://whatspup.firebaseio.com/Clients');
 
 
-        this.logout = function () {
-            userInfo.unauth();
-            return $location.path('/');
-
-        };
-
         this.obj = $firebaseArray(userInfo);
-        console.log(this.obj)
+        //        console.log(this.obj)
 
         this.userArray = {};
 
