@@ -52,17 +52,16 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav pull-right">
-                    <li class="active"><a href="#">Logout</a>
+                    <li class="active"><a href="#" ng-click="app.logout()">Logout</a>
                     </li>
-
                 </ul>
             </div>
             <!--/.navbar-collapse -->
         </div>
     </div>
     <h2>Customer Database</h2>
-    <form ng-submit="client.addClient(client.newClient)">
 
+    <form ng-submit="client.addClient(client.newClient)">
         <input ng-model="client.newClient.name" name="name" placeholder="Client Name" class="password" required />
         <input ng-model="client.newClient.email" name="emailaddress" placeholder=" Client E-mail" class="e-mail" type="e-mail" required />
 
