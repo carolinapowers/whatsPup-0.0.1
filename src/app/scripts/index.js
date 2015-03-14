@@ -105,28 +105,29 @@ angular.module('whatsPup', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', '
              * Then create a child of the users collection named after the
              * authdUser's Facebook ID
 //             */
-            //            //    var fbUser = auth.child('superUsers').child(authdUser.facebook.id);
-            //            //
-            //            //    // Update the authdUser's information in Firebase
-            //            //    fbUser.update({
-            //            //      uid: authdUser.facebook.id,
-            //            //      facebook: authdUser.facebook,
-            //            //      fullName: authdUser.facebook.displayName,
-            //            //      firstName: authdUser.facebook.cachedUserProfile.first_name,
-            //            //      lastName: authdUser.facebook.cachedUserProfile.last_name,
-            //            //      avatarUrl: authdUser.facebook.cachedUserProfile.picture.data.url,
-            //            //      gender: authdUser.facebook.cachedUserProfile.gender
-            //            //    });
-            //            //
-            //            //    // Set user to the object reference of authdUser
-            //            ////    fbUser = $firebaseObject(auth
-            //            ////      .child('superUsers')
-            //            ////      .child(authdUser.facebook.id)
-            //            ////    )
+        var fbUser = auth.child('petsitter').child(authdUser.facebook.id);
+
+        console.log(fbUser);
+        //            //
+        //            //    // Update the authdUser's information in Firebase
+        fbUser.update({
+            uid: authdUser.facebook.id,
+            facebook: authdUser.facebook,
+            fullName: authdUser.facebook.displayName,
+            firstName: authdUser.facebook.cachedUserProfile.first_name,
+            lastName: authdUser.facebook.cachedUserProfile.last_name,
+            avatarUrl: authdUser.facebook.cachedUserProfile.picture.data.url,
+            gender: authdUser.facebook.cachedUserProfile.gender
+        });
+        //    // Set user to the object reference of authdUser
+        fbUser = $firebaseObject(auth
+                .child('petsitter')
+                .child(authdUser.facebook.id)
+            )
             //            //
             //            //    //stores the user information for use elsewhere
-            //            //    currentUser = fbUser;
+                            currentUser = fbUser;
             //            //
-            //            //    return fbUser;
+                            return fbUser;
     }
 });

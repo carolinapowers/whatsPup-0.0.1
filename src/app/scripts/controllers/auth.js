@@ -4,7 +4,15 @@ angular.module('whatsPup')
     .controller('AuthCtrl', function ($firebaseArray, $firebaseObject, Auth) {
         var ref = new Firebase("https://whatspup.firebaseio.com/");
         this.sitterlogin = Auth.sitterlogin;
-//        this.loggedIn = Auth.loggedIn;
+        //        this.loggedIn = Auth.loggedIn;
+        Auth.onAuth(function (user) {
+            self.user = user;
+            if (user === null) {
+                console.log('null')
+            } else {
+                console.log(user)
+            }
+        });
 
     });
 
