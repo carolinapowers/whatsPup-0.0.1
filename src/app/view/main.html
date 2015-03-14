@@ -1,3 +1,4 @@
+<!--
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -17,9 +18,10 @@
                 </li>
             </ul>
         </div>
-        <!--/.navbar-collapse -->
+        /.navbar-collapse
     </div>
 </div>
+-->
 
 
 
@@ -46,12 +48,16 @@
 
         <p class="fblogin"> Login with Facebook</p>
 
-        <a ng-click="app.login()">
-            <div class="sitterbtn" ui-sref="client">I'm a Pet Sitter</div>
+        <a ng-click="app.sitterlogin()">
+            <div class="sitterbtn">I'm a Pet Sitter</div>
         </a>
+
+        <div ng-include="'app/view/ownerbutton.html'"></div>
+        <!--
         <a>
             <div class="ownerbtn" ui-sref="owner">I'm a Pet Owner</div>
         </a>
+-->
 
     </form>
 </div>
