@@ -14,6 +14,10 @@
 
 // injector
 // endinjector
+.container-fluid {
+    width: 90%;
+}
+
 .mask {
     position: fixed;
     right: 0;
@@ -40,7 +44,7 @@ video#bgvid {
     background-size: cover;
 }
 
-form {
+.loginform {
     margin-left: auto;
     margin-right: auto;
     width: 343px;
@@ -92,13 +96,13 @@ input[type=submit] {
 input.e-mail {
     padding-top: 0.5ex;
     margin-top: 1ex;
-//    background: rgba(255, 255, 255, 0.4) url(http://luismruiz.com/img/gemicon_email.png) no-repeat scroll 16px 15px;
+    //    background: rgba(255, 255, 255, 0.4) url(http://luismruiz.com/img/gemicon_email.png) no-repeat scroll 16px 15px;
     padding-left: 45px;
 }
 
 input.password {
     padding-top: 0.5ex;
-//    background: rgba(255, 255, 255, 0.4) url(http://i57.tinypic.com/2mrisqo.png) no-repeat scroll 16px 15px;
+    background: rgba(255, 255, 255, 0.4) url(http://i57.tinypic.com/2mrisqo.png) no-repeat scroll 16px 15px;
     padding-left: 45px;
 }
 
@@ -125,4 +129,8 @@ input.password {
 .ownerbtn:hover {
     cursor: pointer;
     opacity: 1;
+}
+
+.clients {
+    clear: both;
 }
