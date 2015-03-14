@@ -108,11 +108,8 @@
             <p>{{ client.pet }}</p>
             <p>{{ client.phone }} {{ client.email }}</p>
             <p>{{ client.street }} {{ client.city }} {{client.zip }}</p>
-            <a ng-href="#/customers/{{ customer.$id }}" ng-click="editClient()" ng-show="signedIn() && client.creatorUID === user.uid">
-                <button class="btn btn-lg btn-info">edit info</button>
-            </a>
-            <a ng-href="" ng-click="newVisit()" ng-show="signedIn() && client.creatorUID === user.uid">
-                <button class="btn btn-lg btn-success pull-right">new visit</button>
+            <a ui-sref="newvisit">
+                <button class="btn btn-lg btn-info pull-right">new visit</button>
             </a>
         </div>
 

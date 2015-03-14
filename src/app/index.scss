@@ -65,46 +65,12 @@ video#bgvid {
     text-align: center;
 }
 
-input {
-    width: 276px;
-    height: 48px;
-    border: 1px solid rgba(255, 255, 255, .4);
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
-    -moz-background-clip: padding;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-    display: block;
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 18px;
-    color: #fff;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-bottom: 20px;
-}
-
 form a:hover {
     color: #fff;
     text-decoration: none;
 }
 
-input[type=submit] {
-    cursor: pointer;
-}
 
-input.e-mail {
-    padding-top: 0.5ex;
-    margin-top: 1ex;
-    //    background: rgba(255, 255, 255, 0.4) url(http://luismruiz.com/img/gemicon_email.png) no-repeat scroll 16px 15px;
-    padding-left: 45px;
-}
-
-input.password {
-    padding-top: 0.5ex;
-    background: rgba(255, 255, 255, 0.4) url(http://i57.tinypic.com/2mrisqo.png) no-repeat scroll 16px 15px;
-    padding-left: 45px;
-}
 
 .fblogin {
     font-size: 2em;
