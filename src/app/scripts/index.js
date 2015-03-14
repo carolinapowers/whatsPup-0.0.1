@@ -26,6 +26,13 @@ angular.module('whatsPup', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', '
         controller: 'NavCtrl',
         controllerAs: 'nav'
     })
+
+    .state('owner', {
+    url: '/owner',
+    templateUrl: 'app/view/ownerpage.html',
+    controller: 'OwnerBtnCtrl',
+    controllerAs: 'ownerbtn'
+})
     $urlRouterProvider.otherwise('/');
 })
 
@@ -126,8 +133,8 @@ angular.module('whatsPup', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', '
             )
             //            //
             //            //    //stores the user information for use elsewhere
-                            currentUser = fbUser;
-            //            //
-                            return fbUser;
+        currentUser = fbUser;
+        //            //
+        return fbUser;
     }
 });
