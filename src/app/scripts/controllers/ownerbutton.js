@@ -11,6 +11,8 @@ angular.module('whatsPup')
         var ref = new Firebase("https://whatspup.firebaseio.com/");
         var newownerUser = {};
         //        this.ownerlogin = Auth.sitterlogin;
+
+
         this.ownerlogin = function () {
 
             return ref.authWithOAuthPopup("facebook", function (error, authData) {
@@ -26,36 +28,38 @@ angular.module('whatsPup')
             })
         };
 
-        function updateUser(refdUser) {
-            console.log(refdUser)
-            if (refdUser === null) {
-                return null;
-            }
 
-            var ownerUser = ref.child('petowner').child(refdUser.facebook.id);
-            console.log(ownerUser);
 
-            ownerUser.update({
-                uid: refdUserdUser.facebook.id,
-                facebook: refdUser.facebook,
-                fullName: refdUser.facebook.displayName,
-                firstName: refdUser.facebook.cachedUserProfile.first_name,
-                lastName: refdUser.facebook.cachedUserProfile.last_name,
-                avatarUrl: refdUser.facebook.cachedUserProfile.picture.data.url,
-                gender: refdUser.facebook.cachedUserProfile.gender
-            });
-
-            //    // Set user to the object reference of authdUser
-            this.ownerUser = $firebaseObject(ref
-                    .child('petowner')
-                    .child(refdUser.facebook.id)
-                )
-                //            //
-                //            //    //stores the user information for use elsewhere
-            newownerUser = ownerUser;
-
-            return ownerUser;
-        };
+        //        function updateOwner(refdUser) {
+        //            console.log(refdUser)
+        //            if (refdUser === null) {
+        //                return null;
+        //            }
+        //
+        //            var ownerUser = ref.child('petowner').child(refdUser.facebook.id);
+        //            console.log(ownerUser);
+        //
+        //            this.ownerUser.update({
+        //                uid: refdUserdUser.facebook.id,
+        //                facebook: refdUser.facebook,
+        //                fullName: refdUser.facebook.displayName,
+        //                firstName: refdUser.facebook.cachedUserProfile.first_name,
+        //                lastName: refdUser.facebook.cachedUserProfile.last_name,
+        //                avatarUrl: refdUser.facebook.cachedUserProfile.picture.data.url,
+        //
+        //            });
+        //
+        //            //    // Set user to the object reference of authdUser
+        //            this.ownerUser = $firebaseObject(ref
+        //                    .child('petowner')
+        //                    .child(refdUser.facebook.id)
+        //                )
+        //                //            //
+        //                //            //    //stores the user information for use elsewhere
+        //            newownerUser = ownerUser;
+        //
+        //            return ownerUser;
+        //        };
 
 
         Auth.onAuth(function (user) {
