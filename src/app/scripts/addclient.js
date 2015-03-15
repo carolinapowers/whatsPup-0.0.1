@@ -2,19 +2,32 @@
 
 angular.module('whatsPup')
     .controller('AddClientCtrl', function ($firebaseArray, $firebaseObject, Auth) {
-
+        var self = this;
         var userInfo = new Firebase('https://whatspup.firebaseio.com/Clients');
         this.loggedIn = Auth.loggedIn;
 
-//        this.getUser = Auth.getUser;
-//
-//        this.currentUser = Auth.currentUser;
-//        console.log(this.getUser);
+        //        this.getUser = Auth.getUser;
+        //
+        //        this.currentUser = Auth.currentUser;
+        //        console.log(this.getUser);
+
 
         var authData = userInfo.getAuth();
         if (authData) {
             console.log("Authenticated user with uid:", authData.uid);
         }
+
+
+        var userUid = Auth.onAuth(function (user) {
+            self.user = user;
+            if (user === null) {
+                console.log('null')
+            } else {
+                console.log(user.$id)
+                return user.$id;
+            }
+        });
+
 
 
         this.obj = $firebaseArray(userInfo);
@@ -31,7 +44,7 @@ angular.module('whatsPup')
             street: '',
             city: '',
             zip: '',
-            sitterUid: authData.uid
+            sitterUid: self.user.$id
 
         };
 
@@ -49,5 +62,7 @@ angular.module('whatsPup')
 
             };
         }
+
+
 
     });
