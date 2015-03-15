@@ -1,5 +1,91 @@
-<h2>Customer Database</h2>
+<div class="container-fluid">
+    <form class="form-horizontal" ng-submit="client.addClient(client.newClient)">
+        <fieldset>
 
+            <legend>
+                <h2>New Client Information</h2>
+            </legend>
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label class="control-label" for="lastName">Last Name</label>
+                    <div class="col-md-">
+                        <input ng-model="client.newClient.lastName" id="lastName" name="lastName" type="text" placeholder="Last Name" class="form-control input-md">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="firstName">First Name</label>
+                    <div class="">
+                        <input ng-model="client.newClient.firstName" id="firstName" name="firstName" type="text" placeholder="First Name" class="form-control input-md">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="pet">Pet's Name</label>
+                    <div class="">
+                        <input ng-model="client.newClient.pet" id="pet" name="pet" type="text" placeholder="Pet's Name" class="form-control input-md">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="email">Email</label>
+                    <div class="">
+                        <input ng-model="client.newClient.email" id="email" name="email" type="text" placeholder="email@example.com" class="form-control input-md">
+                    </div>
+                </div>
+            </div>
+            <!-- this thing here -->
+
+
+            <div class="col-md-1">
+            </div>
+
+
+            <div class="col-md-5">
+                <div class="form-group">
+                    <label class="control-label" for="phone">Phone Number</label>
+                    <div class="">
+                        <input ng-model="client.newClient.phone" id="phone" name="phone" type="text" placeholder="555-867-5309" class="form-control input-md">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="address">Street Address</label>
+                    <div class="">
+                        <input ng-model="client.newClient.street" id="address" name="address" type="text" placeholder="123 Street Name" class="form-control input-md">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="city">City</label>
+                    <div class="">
+                        <input ng-model="client.newClient.city" id="city" name="city" type="text" placeholder="City Name" class="form-control input-md">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="zip">Zip Code</label>
+                    <div class="">
+                        <input ng-model="client.newClient.zip" id="zip" name="zip" type="text" placeholder="12345" class="form-control input-md">
+                    </div>
+                </div>
+            </div>
+            <!-- another thing here -->
+
+            <div class="form-group">
+                <div class="col-md-6">
+                    <button id="Submit" name="Submit" class="btn btn-primary btn-lg pull-right">submit</button>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+
+</div>
+
+<!--<h2>Customer Database</h2>-->
+
+<!--
 <form ng-submit="client.addClient(client.newClient)">
     <input ng-model="client.newClient.name" name="name" placeholder="Client Name" class="password" required />
     <input ng-model="client.newClient.email" name="emailaddress" placeholder=" Client E-mail" class="e-mail" type="e-mail" required />
@@ -7,9 +93,29 @@
     <input name="submit" class="btn" type="submit" value="Add client" ng-click="app.login()" />
 
 </form>
+-->
 
+<div class="container-fluid">
+    <hr>
+    <span><h1>Customer Database</h1></span>
+    <a href="">
+        <button class="btn btn-lg btn-success newClient pull-right">new client</button>
+    </a>
+    <div ng-repeat="client in client.obj" class="row clients">
+        <div class="cust">
+            <p>{{ client.firstName }}</p>
+            <p>{{ client.lastName }}</p>
+            <p>{{ client.pet }}</p>
+            <p>{{ client.phone }} {{ client.email }}</p>
+            <p>{{ client.street }} {{ client.city }} {{client.zip }}</p>
+            <a ui-sref="newvisit">
+                <button class="btn btn-lg btn-info pull-right">new visit</button>
+            </a>
+        </div>
 
-<hr>
+    </div>
+</div>
+<!--
 <div ng-repeat="client in client.obj" class="row">
     <div class="cust">
         <a href="#/customers/{{ customer.$id }}"><h4>{{ client.name }} {{ customer.firstName }} </h4></a>
@@ -23,6 +129,7 @@
             <button class="btn btn-lg btn-success pull-right">new visit</button>
         </a>
     </div>
+-->
 
 </div>
 
