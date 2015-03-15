@@ -4,10 +4,21 @@ angular.module('whatsPup')
     .controller('AddClientCtrl', function ($firebaseArray, $firebaseObject, Auth) {
 
         var userInfo = new Firebase('https://whatspup.firebaseio.com/Clients');
+        this.loggedIn = Auth.loggedIn;
+
+//        this.getUser = Auth.getUser;
+//
+//        this.currentUser = Auth.currentUser;
+//        console.log(this.getUser);
+
+        var authData = userInfo.getAuth();
+        if (authData) {
+            console.log("Authenticated user with uid:", authData.uid);
+        }
 
 
         this.obj = $firebaseArray(userInfo);
-        //        console.log(this.obj)
+        console.log(this.obj)
 
         this.userArray = {};
 
@@ -19,7 +30,8 @@ angular.module('whatsPup')
             pet: '',
             street: '',
             city: '',
-            zip: ''
+            zip: '',
+            sitterUid: authData.uid
 
         };
 
@@ -32,7 +44,9 @@ angular.module('whatsPup')
                 pet: '',
                 street: '',
                 city: '',
-                zip: ''
+                zip: '',
+                sitterUid: ''
+
             };
         }
 
