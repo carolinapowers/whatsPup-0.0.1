@@ -11,7 +11,8 @@ angular.module('whatsPup')
                 var food = $("#food-0").val(); // get food field value
                 var water = $("#food-1").val(); // get water field value
                 var play = $("#play").val(); // get playtime field value
-                var treats = $("#treats").val(); // get treats field value
+                var treatsY = $("#treats-0").val(); // get treats field value
+                var treats = $("#treats-1").val(); // get treats field value
                 var meds = $("#meds").val(); // get meds field value
                 var misc0 = $("#misc-0").val(); // get misc-0 field value
                 var misc1 = $("#misc-1").val(); // get misc-1 field value
@@ -33,7 +34,7 @@ angular.module('whatsPup')
                                 },
                                 'subject': 'New Visit Update from WhatsPup',
                                 'text': 'Hi ' + name + 'Your pet was just visited by a WhatsPup Pet Sitter.  The following actions were recorded:' +
-                                    food + water + play + treats + meds + note,
+                                    food + water + play + treatsY + treats + meds + misc0 + misc1 + misc2 + misc3 + note,
                                 'to': [
                                     {
                                         'email': 'jstevick@gmail.com',
@@ -44,10 +45,10 @@ angular.module('whatsPup')
                         }
                     })
                     .done(function (response) {
-                        alert('Your message has been sent. Thank you!'); // show success message
+                        alert('The visit has been saved. Thank you!'); // show success message
                     })
                     .fail(function (response) {
-                        alert('Error sending message.');
+                        alert('There was a problem sending the visit.');
                     });
                 return false; // prevent page refresh
             });

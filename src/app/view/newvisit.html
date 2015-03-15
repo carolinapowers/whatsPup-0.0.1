@@ -20,6 +20,7 @@
                     </select>
                 </div>
             </div>
+            <p id="naame">{{client.name}}</p>
 
             <!-- Food and Water -->
             <div class="form-group">
@@ -27,12 +28,12 @@
                 <div class="col-md-4">
                     <div class="checkbox">
                         <label for="food-0">
-                            <input type="checkbox" name="food" id="food-0" value="Yes"> Food
+                            <input type="checkbox" name="food" id="food-0" value="Food"> Food
                         </label>
                     </div>
                     <div class="checkbox">
                         <label for="food-1">
-                            <input type="checkbox" name="food" id="food-1" value="Yes"> Water
+                            <input type="checkbox" name="food" id="food-1" value="Water"> Water
                         </label>
                     </div>
                 </div>
@@ -43,6 +44,7 @@
                 <label class="col-md-4 control-label" for="play">Playtime or Walk Duration</label>
                 <div class="col-md-4">
                     <select id="play" name="play" class="form-control">
+                        <option value="N/A">N/A</option>
                         <option value="5 Minutes">5 Minutes</option>
                         <option value="10 Minutes">10 Minutes</option>
                         <option value="15 Minutes">15 Minutes</option>
@@ -92,22 +94,22 @@
                     </div>
                     <div class="checkbox">
                         <label for="misc-1">
-                            <input type="checkbox" name="misc" id="misc-1" value="Other (See Message)"> Other (See Message)
+                            <input type="checkbox" name="misc" id="misc-1" value="Packages Moved Inside"> Packages Moved Inside
                         </label>
                     </div>
                     <div class="checkbox">
                         <label for="misc-2">
-                            <input type="checkbox" name="misc" id="misc-2" value="Packages Moved Inside"> Packages Moved Inside
+                            <input type="checkbox" name="misc" id="misc-2" value="Picked Up Mail"> Picked Up Mail
                         </label>
                     </div>
                     <div class="checkbox">
                         <label for="misc-3">
-                            <input type="checkbox" name="misc" id="misc-3" value="Picked Up Mail"> Picked Up Mail
+                            <input type="checkbox" name="misc" id="misc-3" value="Watered Plants"> Watered Plants
                         </label>
                     </div>
                     <div class="checkbox">
                         <label for="misc-4">
-                            <input type="checkbox" name="misc" id="misc-4" value="Watered Plants"> Watered Plants
+                            <input type="checkbox" name="misc" id="misc-4" value="Other (See Message)"> Other (See Message)
                         </label>
                     </div>
                 </div>
@@ -117,7 +119,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="message">Message</label>
                 <div class="col-md-4">
-                    <textarea class="form-control" id="message" name="message">Enter Your Message Here</textarea>
+                    <textarea class="form-control" id="message" name="message" placeholder="Write your message here..."></textarea>
                 </div>
             </div>
 

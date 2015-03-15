@@ -14,11 +14,11 @@ angular.module('whatsPup')
 
         this.newClient = {
             email: '',
-            lastName: '',
-            firstName: '',
+            name: '',
             pet: '',
             street: '',
             city: '',
+            state: '',
             zip: ''
 
         };
@@ -27,11 +27,11 @@ angular.module('whatsPup')
             this.obj.$add(user);
             return this.newUser = {
                 email: '',
-                lastName: '',
-                firstName: '',
+                name: '',
                 pet: '',
                 street: '',
                 city: '',
+                state: '',
                 zip: ''
             };
         }
