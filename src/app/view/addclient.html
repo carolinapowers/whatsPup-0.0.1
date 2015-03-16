@@ -15,9 +15,9 @@
 
        <fieldset>
            <div class="row">
-               <div ng-show="show" ng-click="show = !show" class="col-md-11 pull-right">
+               <a href="" ng-show="show" ng-click="show = !show" class="col-md-11 pull-right">
                    <button id="Cancel" name="Cancel" class="btn btn-danger btn-lg pull-right">cancel</button>
-               </div>
+               </a>
                <a href="">
                    <button ng-hide="show" ng-click="show = !show" class="btn btn-lg btn-success newClient pull-right">add client</button>
                </a>
@@ -112,14 +112,17 @@
     <!-- <a href="">
         <button class="btn btn-lg btn-success newClient pull-right">new client</button>
     </a> -->
-    <div ng-repeat="client in client.obj" class="row clients">
+    <div ng-repeat="clients in client.obj" class="row clients">
         <div class="cust">
-            <p>{{ client.name }}</p>
-            <p>{{ client.pet }}</p>
-            <p>{{ client.phone }} {{ client.email }}</p>
-            <p>{{ client.street }} {{ client.city }}, {{client.state}} {{client.zip }}
+            <p>{{ clients.name }}</p>
+            <p>{{ clients.pet }}</p>
+            <p>{{ clients.phone }} {{ clients.email }}</p>
+            <p>{{ clients.street }} {{ clients.city }}, {{clients.state}} {{clients.zip }}
                 <a ui-sref="newvisit">
                     <button class="btn btn-lg btn-info pull-right">new visit</button>
+                </a>
+                <a ng-click="client.deleteClient(clients)">
+                    <button class="btn btn-lg btn-danger pull-right">delete</button>
                 </a>
             </p>
             

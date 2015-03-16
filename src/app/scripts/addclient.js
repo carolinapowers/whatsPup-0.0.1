@@ -107,6 +107,10 @@ angular.module('whatsPup')
 
            };
        }
-       // $scope.addClientForm.$setPristine();
-       // $scope.currentRecord={};
+        this.deleteClient = function (newClient) {
+            var delClient = new Firebase('https://whatspup.firebaseio.com/Clients/' + self.user.$id + '/' + newClient.$id);
+            delClient.remove();
+            //console.log(newClient.$id)
+
+        }
    });
