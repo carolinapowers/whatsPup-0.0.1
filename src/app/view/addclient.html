@@ -18,16 +18,9 @@
             <div ng-show="show">
                 <div class="col-md-5">
                     <div class="form-group">
-                        <label class="control-label" for="lastName">Last Name</label>
+                        <label class="control-label" for="name">Name</label>
                         <div class="col-md-">
-                            <input ng-model="client.newClient.lastName" id="lastName" name="lastName" type="text" placeholder="Last Name" class="form-control input-md">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="control-label" for="firstName">First Name</label>
-                        <div class="">
-                            <input ng-model="client.newClient.firstName" id="firstName" name="firstName" type="text" placeholder="First Name" class="form-control input-md">
+                            <input ng-model="client.newClient.name" id="name" name="name" type="text" placeholder="Last, First" class="form-control input-md">
                         </div>
                     </div>
 
@@ -44,22 +37,22 @@
                             <input ng-model="client.newClient.email" id="email" name="email" type="text" placeholder="email@example.com" class="form-control input-md">
                         </div>
                     </div>
-                </div>
-                <!-- this thing here -->
 
-
-                <div class="col-md-1">
-                </div>
-
-
-                <div class="col-md-5">
                     <div class="form-group">
                         <label class="control-label" for="phone">Phone Number</label>
                         <div class="">
                             <input ng-model="client.newClient.phone" id="phone" name="phone" type="text" placeholder="555-867-5309" class="form-control input-md">
                         </div>
                     </div>
+                </div>
 
+
+
+                <div class="col-md-2">
+                </div>
+
+
+                <div class="col-md-5">
                     <div class="form-group">
                         <label class="control-label" for="address">Street Address</label>
                         <div class="">
@@ -75,13 +68,19 @@
                     </div>
 
                     <div class="form-group">
+                        <label class="control-label" for="state">State</label>
+                        <div class="">
+                            <input ng-model="client.newClient.state" id="state" name="state" type="text" placeholder="State" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <label class="control-label" for="zip">Zip Code</label>
                         <div class="">
                             <input ng-model="client.newClient.zip" id="zip" name="zip" type="text" placeholder="12345" class="form-control input-md">
                         </div>
                     </div>
                 </div>
-                <!-- another thing here -->
 
                 <div class="form-group">
                     <div class="col-md-6">
@@ -104,16 +103,19 @@
     <hr>
     <span><h1>Customer Database</h1></span>
 
-    <div ng-repeat="client in client.obj" class="row clients">
+    <div ng-repeat="clients in client.obj" class="row clients">
         <div class="cust">
-            <p>{{ client.firstName }} {{ client.lastName }}</p>
+            <p>{{ clients.firstName }} {{ clients.lastName }}</p>
 
-            <p>{{ client.pet }}</p>
-            <p>{{ client.phone }}</p>
-            <p> {{ client.email }}</p>
-            <p>{{ client.street }} {{ client.city }} {{client.zip }}</p>
+            <p>{{ clients.pet }}</p>
+            <p>{{ clients.phone }}</p>
+            <p> {{ clients.email }}</p>
+            <p>{{ clients.street }} {{ clients.city }} {{clients.zip }}</p>
             <a ui-sref="newvisit">
                 <button class="btn btn-lg btn-info pull-right">new visit</button>
+            </a>
+            <a ng-click="client.deleteClient(clients)">
+                <button class="btn btn-lg btn-danger pull-right">delete</button>
             </a>
         </div>
 
