@@ -60,5 +60,7 @@ angular.module('whatsPup')
         }
 
 
-
+        $(".newClient").click(function () {
+            $(this).remove();
+        });
     });

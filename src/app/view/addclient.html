@@ -3,10 +3,10 @@
 
         <fieldset>
             <div class="row">
-    <a href="">
-        <button ng-click="show = !show" class="btn btn-lg btn-success newClient pull-right">add client</button>
-    </a>
-</div>
+                <a href="">
+                    <button ng-click="show = !show; deleteItem($index);" class="btn btn-lg btn-success newClient pull-right">add client</button>
+                </a>
+            </div>
             <legend>
                 <h2>New Client Information</h2>
             </legend>
@@ -82,6 +82,11 @@
                     <div class="col-md-6">
                         <button id="Submit" name="Submit" class="btn btn-primary btn-lg pull-right">submit</button>
                     </div>
+<!--
+                    <div ng-click="show = !show" class="col-md-6 pull-right">
+    <button id="Submit" name="Submit" class="btn btn-danger btn-lg">cancel</button>
+</div>
+-->
                 </div>
             </div>
         </fieldset>
