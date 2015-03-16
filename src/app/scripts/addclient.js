@@ -107,6 +107,6 @@ angular.module('whatsPup')
 
            };
        }
-
-
+       // $scope.addClientForm.$setPristine();
+       // $scope.currentRecord={};
    });
