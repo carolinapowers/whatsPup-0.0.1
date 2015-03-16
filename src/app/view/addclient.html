@@ -1,10 +1,32 @@
-<div class="container-fluid">
-    <form class="form-horizontal" ng-submit="client.addClient(client.newClient)" id="addClientForm">
+<!-- <div class="container-fluid">
+    <form class="form-horizontal" ng-submit="client.addClient(client.newClient)">
         <fieldset>
+            <div class="row">
+               <a href="">
+                   <button ng-hide="show" ng-click="show = !show" class="btn btn-lg btn-success newClient">add client</button>
+               </a>
+               <div ng-show="show" ng-click="show = !show">
+                   <button class="btn btn-lg btn-danger newClient pull-right">Cancel</button>
+               </a>
+           </div> -->
+<div class="container-fluid">
 
+   <form class="form-horizontal" ng-submit="client.addClient(client.newClient)">
+
+       <fieldset>
+           <div class="row">
+               <div ng-show="show" ng-click="show = !show" class="col-md-11 pull-right">
+                   <button id="Cancel" name="Cancel" class="btn btn-danger btn-lg pull-right">cancel</button>
+               </div>
+               <a href="">
+                   <button ng-hide="show" ng-click="show = !show" class="btn btn-lg btn-success newClient pull-right">add client</button>
+               </a>
+               
+           </div>
             <legend>
                 <h2>New Client Information</h2>
             </legend>
+            <div ng-show="show">
             <div class="col-md-5">
                 <div class="form-group">
                     <label class="control-label" for="name">Name</label>
@@ -34,7 +56,7 @@
                     </div>
                 </div>
             </div>
-            <!-- this thing here -->
+
 
 
             <div class="col-md-2">
@@ -70,30 +92,18 @@
                     </div>
                 </div>
             </div>
-            <!-- another thing here -->
+
 
             <div class="form-group">
                 <div class="col-md-12">
-                    <button id="Submit" name="Submit" class="btn btn-primary btn-lg pull-right">submit</button>
+                    <button id="Submit"  name="Submit" class="btn btn-primary btn-lg pull-right">submit</button>
                 </div>
             </div>
-
+            </div>
         </fieldset>
     </form>
-
 </div>
 
-<!--<h2>Customer Database</h2>-->
-
-<!--
-<form ng-submit="client.addClient(client.newClient)">
-    <input ng-model="client.newClient.name" name="name" placeholder="Client Name" class="password" required />
-    <input ng-model="client.newClient.email" name="emailaddress" placeholder=" Client E-mail" class="e-mail" type="e-mail" required />
-
-    <input name="submit" class="btn" type="submit" value="Add client" ng-click="app.login()" />
-
-</form>
--->
 
 <div class="container-fluid">
     <hr>
@@ -117,23 +127,6 @@
 
     </div>
 </div>
-<!--
-<div ng-repeat="client in client.obj" class="row">
-    <div class="cust">
-        <a href="#/customers/{{ customer.$id }}"><h4>{{ client.name }} {{ customer.firstName }} </h4></a>
-        <p>{{ customer.pet }}</p>
-        <p>{{ customer.phone }} {{ client.email }}</p>
-        <p>{{ customer.address.street }} {{ customer.address.city }} {{customer.address.zip }}</p>
-        <a ng-href="#/customers/{{ customer.$id }}" ng-click="editCustomer(customer)" ng-show="signedIn() && customer.creatorUID === user.uid">
-            <button class="btn btn-lg btn-info">edit info</button>
-        </a>
-        <a ng-href="" ng-click="newVisit(customer)" ng-show="signedIn() && customer.creatorUID === user.uid">
-            <button class="btn btn-lg btn-success pull-right">new visit</button>
-        </a>
-    </div>
--->
-
 </div>
-
 </div>
 </div>

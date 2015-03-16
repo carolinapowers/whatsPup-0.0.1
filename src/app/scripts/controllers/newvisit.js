@@ -43,12 +43,13 @@ angular.module('whatsPup')
                                         'email': 'jstevick@gmail.com',
                                         'name': 'name',
                                         'type': 'to'
-                    }]
-                            }
+                                    }]
+                            }   
                         }
                     })
                     .done(function (response) {
-                        alert('The visit has been saved. Thank you!'); // show success message      
+                        alert('The visit has been saved. Thank you!'); // show success message
+                        console.log(response);      
                     })
                     .fail(function (response) {
                         alert('There was a problem sending the visit.');
@@ -56,10 +57,4 @@ angular.module('whatsPup')
                 return false; // prevent page refresh 
             });
         });
-
-
-
-
-
-
     });
