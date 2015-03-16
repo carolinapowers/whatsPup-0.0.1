@@ -59,8 +59,8 @@ angular.module('whatsPup')
             };
         }
 
-
-        $(".newClient").click(function () {
-            $(this).remove();
-        });
+//
+//        $(".newClient").click(function () {
+//            $(this).remove();
+//        });
     });

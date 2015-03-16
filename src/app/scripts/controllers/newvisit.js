@@ -3,22 +3,26 @@ angular.module('whatsPup')
         this.loggedIn = Auth.loggedIn;
         $(document).ready(function () {
             console.log("sanity check");
+            console.log(Date.now());
+
 
             $("#newVisit").submit(function () {
                 console.log("newVisit() started");
-                console.log("submitting");
                 var name = $("#clientName").val(); // get client field value
                 var food = $("#food-0").val(); // get food field value
                 var water = $("#food-1").val(); // get water field value
                 var play = $("#play").val(); // get playtime field value
-                var treats = $("#treats").val(); // get treats field value
+                var treatsY = $("#treats-0").val(); // get treats field value
+                var treats = $("#treats-1").val(); // get treats field value
                 var meds = $("#meds").val(); // get meds field value
                 var misc0 = $("#misc-0").val(); // get misc-0 field value
                 var misc1 = $("#misc-1").val(); // get misc-1 field value
                 var misc2 = $("#misc-2").val(); // get misc-2 field value
                 var misc3 = $("#misc-3").val(); // get misc-3 field value
-                var note = $("#message").val(); // get message vale
+                var note = $("#message").val(); // get message value
                 var photo = $("#photo");
+                var currentdate = new Date();
+                var time = "Time of Visit: " + (currentdate.getMonth() + 1) + "/" + currentdate.getDate() + "/" + currentdate.getFullYear() + " at " + currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds(); //get time (angular hates me)
 
                 $.ajax({
                         type: "POST",
@@ -33,28 +37,23 @@ angular.module('whatsPup')
                                 },
                                 'subject': 'New Visit Update from WhatsPup',
                                 'text': 'Hi ' + name + 'Your pet was just visited by a WhatsPup Pet Sitter.  The following actions were recorded:' +
-                                    food + water + play + treats + meds + note,
+                                    time + food + water + play + treatsY + treats + meds + misc0 + misc1 + misc2 + misc3 + note,
                                 'to': [
                                     {
                                         'email': 'jstevick@gmail.com',
                                         'name': 'name',
                                         'type': 'to'
-                    }]
+                                    }]
                             }
                         }
                     })
                     .done(function (response) {
-                        alert('Your message has been sent. Thank you!'); // show success message
+                        alert('The visit has been saved. Thank you!'); // show success message      
                     })
                     .fail(function (response) {
-                        alert('Error sending message.');
+                        alert('There was a problem sending the visit.');
                     });
-                return false; // prevent page refresh
+                return false; // prevent page refresh 
             });
         });
-
-
-
-
-
     });

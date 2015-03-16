@@ -40,6 +40,8 @@ angular.module('whatsPup', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', '
         controller: 'NewVisitCtrl',
         controllerAs: 'newvisit'
     })
+
+
     $urlRouterProvider.otherwise('/');
 })
 
