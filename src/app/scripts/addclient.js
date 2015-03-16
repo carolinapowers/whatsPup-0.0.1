@@ -3,20 +3,6 @@
 angular.module('whatsPup')
     .controller('AddClientCtrl', function ($firebaseArray, $firebaseObject, Auth) {
         var self = this;
-        var userInfo = new Firebase('https://whatspup.firebaseio.com/Clients');
-        this.loggedIn = Auth.loggedIn;
-
-        //        this.getUser = Auth.getUser;
-        //
-        //        this.currentUser = Auth.currentUser;
-        //        console.log(this.getUser);
-
-
-        var authData = userInfo.getAuth();
-        if (authData) {
-            console.log("Authenticated user with uid:", authData.uid);
-        }
-
 
         var userUid = Auth.onAuth(function (user) {
             self.user = user;
@@ -28,6 +14,15 @@ angular.module('whatsPup')
             }
         });
 
+        var userInfo = new Firebase('https://whatspup.firebaseio.com/Clients/' + self.user.$id);
+        this.loggedIn = Auth.loggedIn;
+
+
+        var authData = userInfo.getAuth();
+        if (authData) {
+            console.log("Authenticated user with uid:", authData.uid);
+        }
+
 
 
         this.obj = $firebaseArray(userInfo);
@@ -37,12 +32,13 @@ angular.module('whatsPup')
 
 
         this.newClient = {
-            email: '',
-            lastName: '',
-            firstName: '',
+            name: '',
             pet: '',
+            email: '',
+            phone: '',
             street: '',
             city: '',
+            state: '',
             zip: '',
             sitterUid: self.user.$id
 
@@ -51,14 +47,14 @@ angular.module('whatsPup')
         this.addClient = function (user) {
             this.obj.$add(user);
             return this.newUser = {
-                email: '',
-                lastName: '',
-                firstName: '',
+                name: '',
                 pet: '',
+                email: '',
+                phone: '',
                 street: '',
                 city: '',
-                zip: '',
-                sitterUid: ''
+                state: '',
+                zip: ''
 
             };
         }

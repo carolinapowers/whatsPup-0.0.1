@@ -94,7 +94,7 @@ angular.module('whatsPup', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', '
         }
     };
 
-//    console.log(auth.uid);
+    //    console.log(auth.uid);
 
     /**
      * Tranform the `authdUser` object from `$firebaseAuth` into a full User
@@ -135,6 +135,7 @@ angular.module('whatsPup', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', '
             //            //
             //            //    //stores the user information for use elsewhere
         currentUser = fbUser;
+
 
         //            //
         return fbUser;
