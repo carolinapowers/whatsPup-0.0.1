@@ -13,31 +13,31 @@ angular.module('whatsPup', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', '
             controllerAs: "app"
         })
 
-    .state('client', {
-        url: '/client',
-        templateUrl: 'app/view/addclient.html',
-        controller: 'AddClientCtrl',
-        controllerAs: 'client'
-    })
+        .state('client', {
+            url: '/client',
+            templateUrl: 'app/view/addclient.html',
+            controller: 'AddClientCtrl',
+            controllerAs: 'client'
+        })
 
-    .state('navbar', {
-        url: '/nav',
-        templateUrl: 'app/view/navbar.html',
-        controller: 'NavCtrl',
-        controllerAs: 'nav'
-    })
+        .state('navbar', {
+            url: '/nav',
+            templateUrl: 'app/view/navbar.html',
+            controller: 'NavCtrl',
+            controllerAs: 'nav'
+        })
 
-    .state('owner', {
-            url: '/owner',
-            templateUrl: 'app/view/ownerpage.html',
-            controller: 'OwnerBtnCtrl',
-            controllerAs: 'ownerbtn'
+        .state('owner', {
+                url: '/owner',
+                templateUrl: 'app/view/ownerpage.html',
+                controller: 'OwnerBtnCtrl',
+                controllerAs: 'ownerbtn'
         })
         .state('newvisit', {
-            url: '/newvisit',
-            templateUrl: 'app/view/newvisit.html',
-            controller: 'NewVisitCtrl',
-            controllerAs: 'newvisit'
+                url: '/newvisit',
+                templateUrl: 'app/view/newvisit.html',
+                controller: 'NewVisitCtrl',
+                controllerAs: 'newvisit'
         })
     $urlRouterProvider.otherwise('/');
 })
