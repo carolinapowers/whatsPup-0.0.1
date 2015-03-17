@@ -2,28 +2,23 @@
 
     <form class="form-horizontal newVisit" id="newVisit">
         <fieldset>
-<br>
+            <br>
             <!-- Form Name -->
             <legend>New Visit</legend>
 
-            <!-- Select Client -->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="clientName">Client Name</label>
-                <div class="col-md-4">
-                    <select id="clientName" name="clientName" class="form-control">
-                        <option value="Coltrane, John">Coltrane, John</option>
-                        <option value="Green, Grant">Green, Grant</option>
-                        <option value="Hamilton, Chico">Hamilton, Chico</option>
-                        <option value="Montgomery, Wes">Montgomery, Wes</option>
-                        <option value="Smith, Jimmy">Smith, Jimmy</option>
-                        <option value="Szabo, Gabor">Szabo, Gabor</option>
-                    </select>
+            <section id="users">
+                <div>
+                    <h2>{{newvisit.visitObj.name}}</h2>
+                    <p>{{newvisit.visitObj.email}}</p>
                 </div>
-            </div>
+            </section>
+
+            <!-- Select Client -->
+            <!-- remember to get client email for mailing of form -->
 
             <!-- Food and Water -->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="food">Fresh Food and Water</label>
+                <label class="col-md-4 control-label" for="food"> Fresh Food and Water</label>
                 <div class="col-md-4">
                     <div class="checkbox">
                         <label for="food-0">
@@ -134,7 +129,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="submit">Submit Visit</label>
                 <div class="col-md-4">
-                    <button type="submit" id="submit" class="btn btn-primary" value="Submit">Submit</button>
+                    <button ui-sref="client" ng-submit="client.submit()" type="submit" id="submit " class="btn btn-primary " value="Submit ">Submit</button>
                 </div>
             </div>
         </fieldset>

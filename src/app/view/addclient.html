@@ -1,93 +1,93 @@
 <div class="container-fluid">
 
-   <form class="form-horizontal" ng-submit="client.addClient(client.newClient)">
+    <form class="form-horizontal" ng-submit="client.addClient(client.newClient)">
 
-       <fieldset>
-           <div class="row">
-               <a href="" ng-show="show" ng-click="show = !show" class="col-md-11 pull-right">
-                   <button id="Cancel" name="Cancel" class="btn btn-danger btn-lg pull-right">cancel</button>
-               </a>
-               <a href="">
-                   <button ng-hide="show" ng-click="show = !show" class="btn btn-lg btn-success newClient pull-right">add client</button>
-               </a>
-               
-           </div>
+        <fieldset>
+            <div class="row">
+                <a href="" ng-show="show" ng-click="show = !show" class="col-md-11 pull-right">
+                    <button id="Cancel" name="Cancel" class="btn btn-danger btn-lg pull-right">cancel</button>
+                </a>
+                <a href="">
+                    <button ng-hide="show" ng-click="show = !show" class="btn btn-lg btn-success newClient pull-right">add client</button>
+                </a>
+
+            </div>
             <legend>
                 <h2>New Client Information</h2>
             </legend>
             <div ng-show="show">
-            <div class="col-md-5">
-                <div class="form-group">
-                    <label class="control-label" for="name">Name</label>
-                    <div class="col-md-">
-                        <input ng-model="client.newClient.name" id="name" name="name" type="text" placeholder="Last, First" class="form-control input-md">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label class="control-label" for="name">Name</label>
+                        <div class="col-md-">
+                            <input ng-model="client.newClient.name" id="name" name="name" type="text" placeholder="Last, First" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="pet">Pet's Name</label>
+                        <div class="">
+                            <input ng-model="client.newClient.pet" id="pet" name="pet" type="text" placeholder="Pet's Name" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="email">Email</label>
+                        <div class="">
+                            <input ng-model="client.newClient.email" id="email" name="email" type="text" placeholder="email@example.com" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="phone">Phone Number</label>
+                        <div class="">
+                            <input ng-model="client.newClient.phone" id="phone" name="phone" type="text" placeholder="555-867-5309" class="form-control input-md">
+                        </div>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label class="control-label" for="pet">Pet's Name</label>
-                    <div class="">
-                        <input ng-model="client.newClient.pet" id="pet" name="pet" type="text" placeholder="Pet's Name" class="form-control input-md">
+
+
+                <div class="col-md-2">
+                </div>
+
+
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label class="control-label" for="address">Street Address</label>
+                        <div class="">
+                            <input ng-model="client.newClient.street" id="address" name="address" type="text" placeholder="123 Street Name" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="city">City</label>
+                        <div class="">
+                            <input ng-model="client.newClient.city" id="city" name="city" type="text" placeholder="City Name" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="state">State</label>
+                        <div class="">
+                            <input ng-model="client.newClient.state" id="state" name="state" type="text" placeholder="State" class="form-control input-md">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label" for="zip">Zip Code</label>
+                        <div class="">
+                            <input ng-model="client.newClient.zip" id="zip" name="zip" type="text" placeholder="12345" class="form-control input-md">
+                        </div>
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label class="control-label" for="email">Email</label>
-                    <div class="">
-                        <input ng-model="client.newClient.email" id="email" name="email" type="text" placeholder="email@example.com" class="form-control input-md">
-                    </div>
-                </div>
 
                 <div class="form-group">
-                    <label class="control-label" for="phone">Phone Number</label>
-                    <div class="">
-                        <input ng-model="client.newClient.phone" id="phone" name="phone" type="text" placeholder="555-867-5309" class="form-control input-md">
+                    <div class="col-md-12">
+                        <button id="Submit" name="Submit" class="btn btn-primary btn-lg pull-right">submit</button>
                     </div>
                 </div>
-            </div>
-
-
-
-            <div class="col-md-2">
-            </div>
-
-
-            <div class="col-md-5">
-                <div class="form-group">
-                    <label class="control-label" for="address">Street Address</label>
-                    <div class="">
-                        <input ng-model="client.newClient.street" id="address" name="address" type="text" placeholder="123 Street Name" class="form-control input-md">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label" for="city">City</label>
-                    <div class="">
-                        <input ng-model="client.newClient.city" id="city" name="city" type="text" placeholder="City Name" class="form-control input-md">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label" for="state">State</label>
-                    <div class="">
-                        <input ng-model="client.newClient.state" id="state" name="state" type="text" placeholder="State" class="form-control input-md">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label" for="zip">Zip Code</label>
-                    <div class="">
-                        <input ng-model="client.newClient.zip" id="zip" name="zip" type="text" placeholder="12345" class="form-control input-md">
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="form-group">
-                <div class="col-md-12">
-                    <button id="Submit"  name="Submit" class="btn btn-primary btn-lg pull-right">submit</button>
-                </div>
-            </div>
             </div>
         </fieldset>
     </form>
@@ -107,14 +107,13 @@
             <p>{{ clients.pet }}</p>
             <p>{{ clients.phone }} {{ clients.email }}</p>
             <p>{{ clients.street }} {{ clients.city }} {{clients.state}} {{clients.zip }}
-                <a ng-click="client.test()">
-                    <button class="btn btn-lg btn-info pull-right">new visit</button>
-                </a>
+
+                <a ui-sref="newvisit({user: client.user.$id, clientId: clients.$id})" class="btn btn-lg btn-info pull-right">new visit</a>
                 <a ng-click="client.deleteClient(clients)">
                     <button class="btn btn-lg btn-danger pull-right">delete</button>
                 </a>
             </p>
-            
+
         </div>
 
     </div>

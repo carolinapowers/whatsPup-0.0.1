@@ -1,7 +1,13 @@
 angular.module('whatsPup')
-    .controller('NewVisitCtrl', function (Auth, $state) {
+    .controller('NewVisitCtrl', function (Auth, $state, $stateParams, $firebaseObject) {
         this.loggedIn = Auth.loggedIn;
-        
+
+        var clientVisit = new Firebase('https://whatspup.firebaseio.com/Clients/' + $stateParams.user + '/' + $stateParams.clientId);
+        console.log(clientVisit);
+        // Turn the info into an Object so you can grab the users info being returned
+        this.visitObj = $firebaseObject(clientVisit);
+
+
         $(document).ready(function () {
             console.log("sanity check");
             console.log(Date.now());
@@ -24,7 +30,7 @@ angular.module('whatsPup')
                 var note = $("#message").val(); // get message value
                 var photo = $("#photo");
                 var currentdate = new Date();
-                var time = "Time of Visit: " + (currentdate.getMonth()+1) + "/" + currentdate.getDate() + "/" + currentdate.getFullYear() + " at " + currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds(); //get time (angular hates me)
+                var time = "Time of Visit: " + (currentdate.getMonth() + 1) + "/" + currentdate.getDate() + "/" + currentdate.getFullYear() + " at " + currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds(); //get time (angular hates me)
 
                 $.ajax({
                         type: "POST",
@@ -46,12 +52,12 @@ angular.module('whatsPup')
                                         'name': 'name',
                                         'type': 'to'
                                     }]
-                            }   
+                            }
                         }
                     })
                     .done(function (response) {
                         alert('The visit has been saved. Thank you!'); // show success message
-                        console.log(response);      
+                        console.log(response);
                     })
                     .fail(function (response) {
                         alert('There was a problem sending the visit.');
