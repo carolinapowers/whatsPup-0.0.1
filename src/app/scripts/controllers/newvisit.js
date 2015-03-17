@@ -1,13 +1,15 @@
 angular.module('whatsPup')
-    .controller('NewVisitCtrl', function (Auth) {
+    .controller('NewVisitCtrl', function (Auth, $state) {
         this.loggedIn = Auth.loggedIn;
+        
         $(document).ready(function () {
             console.log("sanity check");
             console.log(Date.now());
 
 
+
             $("#newVisit").submit(function () {
-                console.log("newVisit() started");
+                console.log("new visit started");
                 var name = $("#clientName").val(); // get client field value
                 var food = $("#food-0").val(); // get food field value
                 var water = $("#food-1").val(); // get water field value

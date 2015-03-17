@@ -33,12 +33,18 @@ angular.module('whatsPup', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', '
                 controller: 'OwnerBtnCtrl',
                 controllerAs: 'ownerbtn'
         })
+        // .state('newvisit', {
+        //         url: '/newvisit',
+        //         templateUrl: 'app/view/newvisit.html',
+        //         controller: 'NewVisitCtrl',
+        //         controllerAs: 'newvisit'
+        // })
         .state('newvisit', {
-                url: '/newvisit',
-                templateUrl: 'app/view/newvisit.html',
-                controller: 'NewVisitCtrl',
-                controllerAs: 'newvisit'
-        })
+            templateUrl: 'app/view/newvisit.html',
+            url: 'newvisit/:clientId',
+            controller: 'NewVisitCtrl',
+            controllerAs: 'newvisit'
+   })
     $urlRouterProvider.otherwise('/');
 })
 
@@ -144,3 +150,9 @@ angular.module('whatsPup', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', '
         return fbUser;
     }
 });
+
+// .factory('newVisit', ['FIREBASE_URL', function(){
+//     return function name(){
+        
+//     };
+// }])
