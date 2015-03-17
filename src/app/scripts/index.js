@@ -34,12 +34,20 @@ angular.module('whatsPup', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', '
         controllerAs: 'ownerbtn'
     })
 
-    .state('newvisit', {
-        url: '/newvisit',
+    //    .state('newvisit', {
+    //    url: '/newvisit',
+    //    templateUrl: 'app/view/newvisit.html',
+    //    controller: 'NewVisitCtrl',
+    //    controllerAs: 'newvisit'
+    //})
+
+    .state('client.newvisit', {
         templateUrl: 'app/view/newvisit.html',
-        controller: 'NewVisitCtrl',
-        controllerAs: 'newvisit'
     })
+
+    function AddClientCtrl($state) {
+        $state.transitionTo('client.newvisit');
+    }
 
 
     $urlRouterProvider.otherwise('/');
@@ -63,7 +71,7 @@ angular.module('whatsPup', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', '
         sitterlogin: function () {
 
             return auth.authWithOAuthPopup("facebook", function (error, authData) {
-                //                console.log(authData)
+
                 if (error) {
                     console.log("Login Failed!", error);
                 } else {
@@ -80,23 +88,20 @@ angular.module('whatsPup', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', '
             $state.go('home');
             console.log("hello");
         },
-        /** Wrapper to allow the main controller to check if a user is currently 
-         * Logged in currently
-         */
+
         loggedIn: function () {
             if (auth.getAuth()) {
                 return true;
             }
         },
-        /**
-         *Get the current user.
+        /*
+         Get the current user.
          */
         getUser: function () {
             return currentUser;
         }
     };
 
-    //    console.log(auth.uid);
 
     /**
      * Tranform the `authdUser` object from `$firebaseAuth` into a full User
@@ -112,14 +117,13 @@ angular.module('whatsPup', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', '
         }
 
         /**
-             * Create a reference to the users collection within Firebase
-             * Then create a child of the users collection named after the
-             * authdUser's Facebook ID
-//             */
+         * Create a reference to the users collection within Firebase
+         * Then create a child of the users collection named after the
+         * authdUser's Facebook ID            */
         var fbUser = auth.child('petsitter').child(authdUser.facebook.id);
 
         console.log(fbUser);
-        //            //
+
         //            //    // Update the authdUser's information in Firebase
         fbUser.update({
             uid: authdUser.facebook.id,
@@ -131,15 +135,14 @@ angular.module('whatsPup', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', '
         });
         //    // Set user to the object reference of authdUser
         fbUser = $firebaseObject(auth
-                .child('petsitter')
-                .child(authdUser.facebook.id)
-            )
-            //            //
-            //            //    //stores the user information for use elsewhere
+            .child('petsitter')
+            .child(authdUser.facebook.id)
+        )
+
+        //            //    //stores the user information for use elsewhere
         currentUser = fbUser;
 
 
-        //            //
         return fbUser;
     }
 });

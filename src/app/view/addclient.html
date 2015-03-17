@@ -1,5 +1,5 @@
 <div class="container-fluid">
-
+    <div ui-view></div>
     <form class="form-horizontal" ng-submit="client.addClient(client.newClient)">
 
         <fieldset>
@@ -105,13 +105,13 @@
 
     <div ng-repeat="clients in client.obj" class="row clients">
         <div class="cust">
-            <p>{{ clients.firstName }} {{ clients.lastName }}</p>
+            <p>{{ clients.name}}</p>
 
             <p>{{ clients.pet }}</p>
             <p>{{ clients.phone }}</p>
             <p> {{ clients.email }}</p>
             <p>{{ clients.street }} {{ clients.city }} {{clients.zip }}</p>
-            <a ui-sref="newvisit">
+            <a ui-sref="client.newvisit">
                 <button class="btn btn-lg btn-info pull-right">new visit</button>
             </a>
             <a ng-click="client.deleteClient(clients)">

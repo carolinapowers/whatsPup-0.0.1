@@ -46,8 +46,8 @@ angular.module('whatsPup')
         };
 
 //        this.newClient = function () {
-        //            return newClient {};
-        //        }
+//            return newClient {};
+//        }
 
         this.addClient = function (user) {
             this.obj.$add(user);
@@ -63,10 +63,6 @@ angular.module('whatsPup')
 
             };
         }
-
-
-        //
-
 
         this.deleteClient = function (newClient) {
             var delClient = new Firebase('https://whatspup.firebaseio.com/Clients/' + self.user.$id + '/' + newClient.$id);

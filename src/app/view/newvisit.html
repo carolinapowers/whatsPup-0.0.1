@@ -5,8 +5,14 @@
             <br>
             <!-- Form Name -->
             <legend>New Visit</legend>
-
+            <ul>
+                <li ng-repeat="clients in client.obj">
+                    <a>{{clients.name}}</a>
+                    <a>{{clients.email}}</a>
+                </li>
+            </ul>
             <!-- Select Client -->
+
             <div class="form-group">
                 <label class="col-md-4 control-label" for="clientName">Client Name</label>
                 <div class="col-md-4">
@@ -23,7 +29,7 @@
 
             <!-- Food and Water -->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="food">Fresh Food and Water</label>
+                <label class="col-md-4 control-label" for="food"> Fresh Food and Water</label>
                 <div class="col-md-4">
                     <div class="checkbox">
                         <label for="food-0">
@@ -139,4 +145,5 @@
             </div>
         </fieldset>
     </form>
+
 </div>
