@@ -5,24 +5,35 @@
             <br>
             <!-- Form Name -->
             <legend>New Visit</legend>
+            <!--
             <ul>
-                <li ng-repeat="clients in client.obj">
-                    <a>{{clients.name}}</a>
-                    <a>{{clients.email}}</a>
-                </li>
-            </ul>
+    <li ng-repeat="clients in client.obj">
+        <a>{{clients.name}}</a>
+        <a>{{clients.email}}</a>
+    </li>
+</ul>
+-->
             <!-- Select Client -->
 
             <div class="form-group">
                 <label class="col-md-4 control-label" for="clientName">Client Name</label>
                 <div class="col-md-4">
+                    <!--                    <select ng-options="clients.email for client in obj" ng-model="clients.email" id="clientName" name="clientName" class="form-control">-->
                     <select id="clientName" name="clientName" class="form-control">
+                        <option ng-repeat="clients in client.obj">
+                            <a>{{clients.email}}</a>
+                        </option>
+
+                        <!--    
+                        
                         <option value="Coltrane, John">Coltrane, John</option>
-                        <option value="Green, Grant">Green, Grant</option>
-                        <option value="Hamilton, Chico">Hamilton, Chico</option>
-                        <option value="Montgomery, Wes">Montgomery, Wes</option>
-                        <option value="Smith, Jimmy">Smith, Jimmy</option>
-                        <option value="Szabo, Gabor">Szabo, Gabor</option>
+<option value="Green, Grant">Green, Grant</option>
+<option value="Hamilton, Chico">Hamilton, Chico</option>
+<option value="Montgomery, Wes">Montgomery, Wes</option>
+<option value="Smith, Jimmy">Smith, Jimmy</option>
+<option value="Szabo, Gabor">Szabo, Gabor</option>
+
+-->
                     </select>
                 </div>
             </div>
