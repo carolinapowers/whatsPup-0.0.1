@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('whatsPup')
-    .controller('AddClientCtrl', function ($firebaseArray, $firebaseObject, Auth) {
+    .controller('AddClientCtrl', function ($firebaseArray, $firebaseObject, Auth, $state, $stateParams) {
         var self = this;
 
         var userUid = Auth.onAuth(function (user) {
@@ -26,8 +26,7 @@ angular.module('whatsPup')
 
 
         this.obj = $firebaseArray(userInfo);
-
-        console.log(this.obj)
+        //        console.log(this.obj)
 
         this.userArray = {};
 
@@ -45,10 +44,6 @@ angular.module('whatsPup')
 
         };
 
-//        this.newClient = function () {
-//            return newClient {};
-//        }
-
         this.addClient = function (user) {
             this.obj.$add(user);
             return this.newUser = {
@@ -59,15 +54,27 @@ angular.module('whatsPup')
                 street: '',
                 city: '',
                 state: '',
-                zip: ''
+                zip: '',
+                sitterUid: ''
 
             };
         }
-
         this.deleteClient = function (newClient) {
             var delClient = new Firebase('https://whatspup.firebaseio.com/Clients/' + self.user.$id + '/' + newClient.$id);
             delClient.remove();
             //console.log(newClient.$id)
+        };
 
-        }
+
+
+
+
+
+        //        this.test = function (newClient) {
+        //            var clientVisit = new Firebase('https://whatspup.firebaseio.com/Clients/' + self.user.$id + '/' + $stateParams.id);
+        //            $state.go('newvisit', {
+        //                clientId: clientVisit
+        //            })
+
+
     });

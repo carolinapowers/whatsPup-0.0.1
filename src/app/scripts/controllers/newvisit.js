@@ -1,13 +1,21 @@
 angular.module('whatsPup')
-    .controller('NewVisitCtrl', function (Auth) {
+    .controller('NewVisitCtrl', function (Auth, $state, $stateParams, $firebaseObject) {
         this.loggedIn = Auth.loggedIn;
+
+        var clientVisit = new Firebase('https://whatspup.firebaseio.com/Clients/' + $stateParams.user + '/' + $stateParams.clientId);
+        console.log(clientVisit);
+        // Turn the info into an Object so you can grab the users info being returned
+        this.visitObj = $firebaseObject(clientVisit);
+
+
         $(document).ready(function () {
             console.log("sanity check");
             console.log(Date.now());
 
 
+
             $("#newVisit").submit(function () {
-                console.log("newVisit() started");
+                console.log("new visit started");
                 var name = $("#clientName").val(); // get client field value
                 var food = $("#food-0").val(); // get food field value
                 var water = $("#food-1").val(); // get water field value
@@ -48,7 +56,8 @@ angular.module('whatsPup')
                         }
                     })
                     .done(function (response) {
-                        alert('The visit has been saved. Thank you!'); // show success message      
+                        alert('The visit has been saved. Thank you!'); // show success message
+                        console.log(response);
                     })
                     .fail(function (response) {
                         alert('There was a problem sending the visit.');

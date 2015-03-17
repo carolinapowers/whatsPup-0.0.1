@@ -5,14 +5,23 @@
             <br>
             <!-- Form Name -->
             <legend>New Visit</legend>
-            <!--
+
+
             <ul>
-    <li ng-repeat="clients in client.obj">
-        <a>{{clients.name}}</a>
-        <a>{{clients.email}}</a>
-    </li>
-</ul>
--->
+                <li ng-repeat="clients in client.obj">
+                    <a>{{newvisit.visitObj.name}}</a>
+                    <a>{{clients.email}}</a>
+                </li>
+            </ul>
+
+            <section id="users">
+                <div>
+                    <h2>{{newvisit.visitObj.name}}</h2>
+                    <!--                    <p>{{client.obj.visitObj.email}}</p>-->
+                    <p>{{newvisit.userInfo.age}}</p>
+                </div>
+            </section>
+
             <!-- Select Client -->
 
             <div class="form-group">
@@ -21,7 +30,7 @@
                     <!--                    <select ng-options="clients.email for client in obj" ng-model="clients.email" id="clientName" name="clientName" class="form-control">-->
                     <select id="clientName" name="clientName" class="form-control">
                         <option ng-repeat="clients in client.obj">
-                            <a>{{clients.email}}</a>
+                            <a id="email">{{clients.email}}</a>
                         </option>
 
                         <!--    
@@ -151,10 +160,25 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="submit">Submit Visit</label>
                 <div class="col-md-4">
-                    <button ui-sref="client" type=" submit " id="submit " class="btn btn-primary " value="Submit ">Submit</button>
+                    <button ui-sref="client" ng-submit="client.submit()" type="submit" id="submit " class="btn btn-primary " value="Submit ">Submit</button>
                 </div>
             </div>
         </fieldset>
     </form>
+
+    <ul>
+        <li ng-repeat="clients in client.obj">
+            <a>{{newvisit.visitObj.name}}</a>
+            <a>{{clients.email}}</a>
+        </li>
+    </ul>
+
+    <section id="users">
+        <div>
+            <h2>{{newvisit.visitObj.name}}</h2>
+            <!--                    <p>{{client.obj.visitObj.email}}</p>-->
+            <p>{{newvisit.userInfo.age}}</p>
+        </div>
+    </section>
 
 </div>
