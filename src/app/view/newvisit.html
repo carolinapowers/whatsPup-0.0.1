@@ -1,6 +1,6 @@
 <div class="container">
 
-    <form class="form-horizontal newVisit" id="newVisit">
+    <form class="form-horizontal newVisit" id="clientVisit" ng-submit="clientVisit.submitForm">
         <fieldset>
             <br>
             <!-- Form Name -->
@@ -12,7 +12,6 @@
                     <p>{{newvisit.visitObj.email}}</p>
                 </div>
             </section>
-
             <!-- Select Client -->
             <!-- remember to get client email for mailing of form -->
 
@@ -22,12 +21,12 @@
                 <div class="col-md-4">
                     <div class="checkbox">
                         <label for="food-0">
-                            <input type="checkbox" name="food" id="food-0" value="Food"> Food
+                            <input type="checkbox" name="food" id="food-0" value="Food" ng-model="clientVisit.food"> Food
                         </label>
                     </div>
                     <div class="checkbox">
                         <label for="food-1">
-                            <input type="checkbox" name="food" id="food-1" value="Water"> Water
+                            <input type="checkbox" name="food" id="food-1" value="Water" ng-model="clientVisit.water"> Water
                         </label>
                     </div>
                 </div>
@@ -37,7 +36,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="play">Playtime or Walk Duration</label>
                 <div class="col-md-4">
-                    <select id="play" name="play" class="form-control">
+                    <select id="play" name="play" class="form-control" ng-model="clientVisit.play">
                         <option value="N/A">N/A</option>
                         <option value="5 Minutes">5 Minutes</option>
                         <option value="10 Minutes">10 Minutes</option>
@@ -55,14 +54,14 @@
                 <div class="col-md-4">
                     <div class="checkbox">
                         <label for="treats-0">
-                            <input type="checkbox" name="treats" id="treats-0" value="Yes"> Yes
+                            <input type="checkbox" name="treats" id="treats-0" ng-model="clientVisit.treats"> Yes
                         </label>
                     </div>
-                    <div class="checkbox">
+                    <!-- <div class="checkbox">
                         <label for="treats-1">
                             <input type="checkbox" name="treats" id="treats-1" value="No"> No
                         </label>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -70,7 +69,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="meds">Medications</label>
                 <div class="col-md-4">
-                    <select id="meds" name="meds" class="form-control">
+                    <select id="meds" name="meds" class="form-control" ng-model="clientVisit.meds">
                         <option value="N/A">N/A</option>
                         <option value="Yes">Yes</option>
                     </select>
@@ -83,27 +82,27 @@
                 <div class="col-md-4">
                     <div class="checkbox">
                         <label for="misc-0">
-                            <input type="checkbox" name="misc" id="misc-0" value="Cleaned Up Pet Mess"> Cleaned Up Pet Mess
+                            <input type="checkbox" name="misc" id="misc-0" value="Cleaned Up Pet Mess" ng-model="clientVisit.mess"> Cleaned Up Pet Mess
                         </label>
                     </div>
                     <div class="checkbox">
                         <label for="misc-1">
-                            <input type="checkbox" name="misc" id="misc-1" value="Packages Moved Inside"> Packages Moved Inside
+                            <input type="checkbox" name="misc" id="misc-1" value="Packages Moved Inside" ng-model="clientVisit.packages"> Packages Moved Inside
                         </label>
                     </div>
                     <div class="checkbox">
                         <label for="misc-2">
-                            <input type="checkbox" name="misc" id="misc-2" value="Picked Up Mail"> Picked Up Mail
+                            <input type="checkbox" name="misc" id="misc-2" value="Picked Up Mail" ng-model="clientVisit.mail"> Picked Up Mail
                         </label>
                     </div>
                     <div class="checkbox">
                         <label for="misc-3">
-                            <input type="checkbox" name="misc" id="misc-3" value="Watered Plants"> Watered Plants
+                            <input type="checkbox" name="misc" id="misc-3" value="Watered Plants" ng-model="clientVisit.plants"> Watered Plants
                         </label>
                     </div>
                     <div class="checkbox">
                         <label for="misc-4">
-                            <input type="checkbox" name="misc" id="misc-4" value="Other (See Message)"> Other (See Message)
+                            <input type="checkbox" name="misc" id="misc-4" value="Other (See Message)" ng-model="clientVisit.other"> Other (See Message)
                         </label>
                     </div>
                 </div>
@@ -113,7 +112,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="message">Message</label>
                 <div class="col-md-4">
-                    <textarea class="form-control" id="message" name="message" placeholder="Write your message here..."></textarea>
+                    <textarea class="form-control" id="message" placeholder="Write your message here..." ng-model="clientVisit.message"></textarea>
                 </div>
             </div>
 
@@ -129,7 +128,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="submit">Submit Visit</label>
                 <div class="col-md-4">
-                    <button ui-sref="client" ng-submit="client.submit()" type="submit" id="submit " class="btn btn-primary " value="Submit ">Submit</button>
+                    <button ui-sref="client" ng-click="newvisit.sentEmail()" type="submit" id="submit " class="btn btn-primary " value="Submit">Submit</button>
                 </div>
             </div>
         </fieldset>
