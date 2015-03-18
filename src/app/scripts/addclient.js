@@ -66,17 +66,5 @@ angular.module('whatsPup')
         }
 
 
-        //            this.test = function (newClient) {
-        //                var clientVisit = new Firebase('https://whatspup.firebaseio.com/Clients/' + self.user.$id + '/' + newClient.$id);
-        //                $state.go('newvisit', {
-        //                    clientId: clientVisit
-        //                })
-        //
-        ////                this.test = function (newClient) {
-        //        //                    var clientVisit = new Firebase('https://whatspup.firebaseio.com/Clients/' + );
-        //        //                    $state.go('newvisit', {
-        //        //                        clientId: clientVisit
-        //        //                    })
-        //        //
-        //        //                }
+
     });

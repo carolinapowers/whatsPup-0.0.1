@@ -105,7 +105,8 @@
         <div class="cust">
             <p>{{ clients.name }}</p>
             <p>{{ clients.pet }}</p>
-            <p>{{ clients.phone }} {{ clients.email }}</p>
+            <p>{{ clients.phone }}</p>
+            <p>{{ clients.email }}</p>
             <p>{{ clients.street }} {{ clients.city }} {{clients.state}} {{clients.zip }}
 
                 <a ui-sref="newvisit({user: client.user.$id, clientId: clients.$id})" class="btn btn-lg btn-info pull-right">new visit</a>
