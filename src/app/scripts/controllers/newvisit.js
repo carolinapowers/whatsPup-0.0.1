@@ -8,14 +8,17 @@ angular.module('whatsPup')
 
         this.visitObj = $firebaseObject(clientVisit);
 
+
+
         this.visitObj.$loaded().then(function (data) {
             console.log(data.email);
             return self.getEmail = data.email;
-
         })
         console.log(self.getEmail);
 
-        this.sendEmail = ''
+        console.log(this.sendEmail);
+
+
 
 
 
@@ -46,7 +49,7 @@ angular.module('whatsPup')
                             'text': 'Hi, Your pet was just visited by a WhatsPup Pet Sitter.  The following actions were recorded:' + time + "Food:" + this.food + "Water:" + this.water + "Play Time:" + this.play + "Treats:" + this.treats + "Medications:" + this.meds + "Cleaned up mess:" + this.mess + "Packages moved inside:" + this.packages + "Picked up mail:" + this.mail + "Watered Plants:" + this.plants + "Other:" + this.other + "Message:" + this.message,
                             'to': [
                                 {
-                                    'email': 'jstevick@gmail.com',
+                                    'email': this.getEmail,
                                     'name': 'name',
                                     'type': 'to'
                 }]

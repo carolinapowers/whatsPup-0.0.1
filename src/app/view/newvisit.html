@@ -9,9 +9,12 @@
             <section id="users">
                 <div>
                     <h2>{{newvisit.visitObj.name}}</h2>
-                    <p ng-model="newvisit.sendEmail">{{newvisit.visitObj.email}}</p>
+                    <input ng-model="newvisit.getEmail" value="{{newvisit.getEmail}}">
+                    <p>{{newvisit.getEmail}}</p>
                 </div>
             </section>
+
+
             <!-- Select Client -->
             <!-- remember to get client email for mailing of form -->
 
