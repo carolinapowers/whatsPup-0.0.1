@@ -6,12 +6,15 @@
             <!-- Form Name -->
             <legend>New Visit</legend>
 
-            <section id="users">
-                <div>
-                    <h2>{{newvisit.visitObj.name}}</h2>
-                    <p>{{newvisit.visitObj.email}}</p>
-                </div>
-            </section>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="email">
+                    
+                        <h2>{{newvisit.visitObj.name}}</h2>
+                        <input type="email" class="form-control" ng-model="newvisit.getEmail" value="{{newvisit.getEmail}}">
+                </label>
+            </div>
+
+
             <!-- Select Client -->
             <!-- remember to get client email for mailing of form -->
 
@@ -57,11 +60,7 @@
                             <input type="checkbox" name="treats" id="treats" ng-model="newvisit.treats"> Yes
                         </label>
                     </div>
-                    <!-- <div class="checkbox">
-                        <label for="treats-1">
-                            <input type="checkbox" name="treats" id="treats-1" value="No"> No
-                        </label>
-                    </div> -->
+
                 </div>
             </div>
 
