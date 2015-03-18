@@ -62,6 +62,8 @@ angular.module('whatsPup')
         //         return false; // prevent page refresh 
         //     });
         // });
+var currentdate = new Date();
+var time = "Time of Visit: " + (currentdate.getMonth() + 1) + "/" + currentdate.getDate() + "/" + currentdate.getFullYear() + " at " + currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds(); //get time
 this.sentEmail = function () {
 $http({
     method: "POST",
@@ -75,8 +77,8 @@ $http({
                 'Reply-To': 'whatspupupdate@gmail.com'
             },
             'subject': 'New Visit Update from WhatsPup',
-            'text': 'Hi ' + 'Your pet was just visited by a WhatsPup Pet Sitter.  The following actions were recorded: just testing this out',
-                // time + food + water + play + treatsY + treats + meds + misc0 + misc1 + misc2 + misc3 + note,
+            'text': 
+                'Hi, Your pet was just visited by a WhatsPup Pet Sitter.  The following actions were recorded:' + time + "Food:" + this.food + "Water:" + this.water + "Play Time:" + this.play + "Treats:" + this.treats + "Medications:" + this.meds + "Cleaned up mess:" + this.mess + "Packages moved inside:" + this.packages + "Picked up mail:" + this.mail + "Watered Plants:" + this.plants + "Other:" + this.other + "Message:" + this.message,
             'to': [
                 {
                     'email': 'jstevick@gmail.com',
@@ -94,4 +96,5 @@ $http({
             alert('There was a problem sending the visit.');
         });
  }
+
 });
