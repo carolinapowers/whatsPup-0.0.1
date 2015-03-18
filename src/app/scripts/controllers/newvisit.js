@@ -1,60 +1,68 @@
 angular.module('whatsPup')
-    .controller('NewVisitCtrl', function (Auth) {
+    .controller('NewVisitCtrl', function (Auth, $state, $stateParams, $firebaseObject, $http) {
+        var self = this;
         this.loggedIn = Auth.loggedIn;
-        $(document).ready(function () {
-            console.log("sanity check");
 
-            $("#newVisit").submit(function () {
-                console.log("newVisit() started");
-                console.log("submitting");
-                var name = $("#clientName").val(); // get client field value
-                var food = $("#food-0").val(); // get food field value
-                var water = $("#food-1").val(); // get water field value
-                var play = $("#play").val(); // get playtime field value
-                var treats = $("#treats").val(); // get treats field value
-                var meds = $("#meds").val(); // get meds field value
-                var misc0 = $("#misc-0").val(); // get misc-0 field value
-                var misc1 = $("#misc-1").val(); // get misc-1 field value
-                var misc2 = $("#misc-2").val(); // get misc-2 field value
-                var misc3 = $("#misc-3").val(); // get misc-3 field value
-                var note = $("#message").val(); // get message vale
-                var photo = $("#photo");
+        var clientVisit = new Firebase('https://whatspup.firebaseio.com/Clients/' + $stateParams.user + '/' + $stateParams.clientId);
+        console.log(clientVisit);
 
-                $.ajax({
-                        type: "POST",
-                        url: "https://mandrillapp.com/api/1.0/messages/send.json",
-                        data: {
-                            'key': 'SjfF7oGr1BHLUnBlnSF20A',
-                            'message': {
-                                'from_email': 'whatspupupdate@gmail.com',
-                                'from_name': 'WhatsPup',
-                                'headers': {
-                                    'Reply-To': 'whatspupupdate@gmail.com'
-                                },
-                                'subject': 'New Visit Update from WhatsPup',
-                                'text': 'Hi ' + name + 'Your pet was just visited by a WhatsPup Pet Sitter.  The following actions were recorded:' +
-                                    food + water + play + treats + meds + note,
-                                'to': [
-                                    {
-                                        'email': 'jstevick@gmail.com',
-                                        'name': 'name',
-                                        'type': 'to'
-                    }]
-                            }
+        this.visitObj = $firebaseObject(clientVisit);
+
+
+
+        this.visitObj.$loaded().then(function (data) {
+            console.log(data.email);
+            return self.getEmail = data.email;
+        })
+        console.log(self.getEmail);
+
+        console.log(this.sendEmail);
+
+
+
+
+
+
+        //        clientVisit.on("value", function (snapshot) {
+        //            self.getEmail = snapshot.val();
+        //            console.log("Client E-mail: " + self.getEmail.email);
+        //            return self.getEmail = self.getEmail.email;
+        //        });
+        //
+        //        console.log(self.getEmail);
+
+        var currentdate = new Date();
+        var time = "Time of Visit: " + (currentdate.getMonth() + 1) + "/" + currentdate.getDate() + "/" + currentdate.getFullYear() + " at " + currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds(); //get time
+        this.sentEmail = function () {
+            $http({
+                    method: "POST",
+                    url: "https://mandrillapp.com/api/1.0/messages/send.json",
+                    data: {
+                        'key': 'SjfF7oGr1BHLUnBlnSF20A',
+                        'message': {
+                            'from_email': 'whatspupupdate@gmail.com',
+                            'from_name': 'WhatsPup',
+                            'headers': {
+                                'Reply-To': 'whatspupupdate@gmail.com'
+                            },
+                            'subject': 'New Visit Update from WhatsPup',
+                            'text': 'Hi, Your pet was just visited by a WhatsPup Pet Sitter.  The following actions were recorded:' + time + "Food:" + this.food + "Water:" + this.water + "Play Time:" + this.play + "Treats:" + this.treats + "Medications:" + this.meds + "Cleaned up mess:" + this.mess + "Packages moved inside:" + this.packages + "Picked up mail:" + this.mail + "Watered Plants:" + this.plants + "Other:" + this.other + "Message:" + this.message,
+                            'to': [
+                                {
+                                    'email': this.getEmail,
+                                    'name': 'name',
+                                    'type': 'to'
+                }]
                         }
-                    })
-                    .done(function (response) {
-                        alert('Your message has been sent. Thank you!'); // show success message
-                    })
-                    .fail(function (response) {
-                        alert('Error sending message.');
-                    });
-                return false; // prevent page refresh
-            });
-        });
-
-
-
-
+                    }
+                })
+                .success(function (response) {
+                    alert('The visit has been saved. Thank you!'); // show success message
+                    console.log(response);
+                })
+                .error(function (response) {
+                    alert('There was a problem sending the visit.');
+                });
+        }
 
     });
