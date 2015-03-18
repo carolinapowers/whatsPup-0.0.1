@@ -1,51 +1,19 @@
-<div class="container">
+<div class="container" ng-controller="NewVisitCtrl as newvisit">
 
-    <form class="form-horizontal newVisit" id="newVisit">
+    <form class="form-horizontal newVisit" name="visitForm" id="clientVisit" ng-submit="clientVisit.submitForm">
         <fieldset>
             <br>
             <!-- Form Name -->
             <legend>New Visit</legend>
 
-
-            <ul>
-                <li ng-repeat="clients in client.obj">
-                    <a>{{newvisit.visitObj.name}}</a>
-                    <a>{{clients.email}}</a>
-                </li>
-            </ul>
-
             <section id="users">
                 <div>
                     <h2>{{newvisit.visitObj.name}}</h2>
-                    <!--                    <p>{{client.obj.visitObj.email}}</p>-->
-                    <p>{{newvisit.userInfo.age}}</p>
+                    <p ng-model="newvisit.sendEmail">{{newvisit.visitObj.email}}</p>
                 </div>
             </section>
-
             <!-- Select Client -->
-
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="clientName">Client Name</label>
-                <div class="col-md-4">
-                    <!--                    <select ng-options="clients.email for client in obj" ng-model="clients.email" id="clientName" name="clientName" class="form-control">-->
-                    <select id="clientName" name="clientName" class="form-control">
-                        <option ng-repeat="clients in client.obj">
-                            <a id="email">{{clients.email}}</a>
-                        </option>
-
-                        <!--    
-                        
-                        <option value="Coltrane, John">Coltrane, John</option>
-<option value="Green, Grant">Green, Grant</option>
-<option value="Hamilton, Chico">Hamilton, Chico</option>
-<option value="Montgomery, Wes">Montgomery, Wes</option>
-<option value="Smith, Jimmy">Smith, Jimmy</option>
-<option value="Szabo, Gabor">Szabo, Gabor</option>
-
--->
-                    </select>
-                </div>
-            </div>
+            <!-- remember to get client email for mailing of form -->
 
             <!-- Food and Water -->
             <div class="form-group">
@@ -53,12 +21,12 @@
                 <div class="col-md-4">
                     <div class="checkbox">
                         <label for="food-0">
-                            <input type="checkbox" name="food" id="food-0" value="Food"> Food
+                            <input type="checkbox" name="food" id="food-0" value="Food" ng-model="newvisit.food"> Food
                         </label>
                     </div>
                     <div class="checkbox">
                         <label for="food-1">
-                            <input type="checkbox" name="food" id="food-1" value="Water"> Water
+                            <input type="checkbox" name="water" id="water" value="Water" ng-model="newvisit.water"> Water
                         </label>
                     </div>
                 </div>
@@ -68,7 +36,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="play">Playtime or Walk Duration</label>
                 <div class="col-md-4">
-                    <select id="play" name="play" class="form-control">
+                    <select id="play" name="play" class="form-control" ng-model="newvisit.play">
                         <option value="N/A">N/A</option>
                         <option value="5 Minutes">5 Minutes</option>
                         <option value="10 Minutes">10 Minutes</option>
@@ -85,15 +53,11 @@
                 <label class="col-md-4 control-label" for="treats">Treats</label>
                 <div class="col-md-4">
                     <div class="checkbox">
-                        <label for="treats-0">
-                            <input type="checkbox" name="treats" id="treats-0" value="Yes"> Yes
+                        <label for="treats">
+                            <input type="checkbox" name="treats" id="treats" ng-model="newvisit.treats"> Yes
                         </label>
                     </div>
-                    <div class="checkbox">
-                        <label for="treats-1">
-                            <input type="checkbox" name="treats" id="treats-1" value="No"> No
-                        </label>
-                    </div>
+
                 </div>
             </div>
 
@@ -101,7 +65,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="meds">Medications</label>
                 <div class="col-md-4">
-                    <select id="meds" name="meds" class="form-control">
+                    <select id="meds" name="meds" class="form-control" ng-model="newvisit.meds">
                         <option value="N/A">N/A</option>
                         <option value="Yes">Yes</option>
                     </select>
@@ -114,27 +78,27 @@
                 <div class="col-md-4">
                     <div class="checkbox">
                         <label for="misc-0">
-                            <input type="checkbox" name="misc" id="misc-0" value="Cleaned Up Pet Mess"> Cleaned Up Pet Mess
+                            <input type="checkbox" name="misc" id="misc-0" value="Cleaned Up Pet Mess" ng-model="newvisit.mess"> Cleaned Up Pet Mess
                         </label>
                     </div>
                     <div class="checkbox">
                         <label for="misc-1">
-                            <input type="checkbox" name="misc" id="misc-1" value="Packages Moved Inside"> Packages Moved Inside
+                            <input type="checkbox" name="misc" id="misc-1" value="Packages Moved Inside" ng-model="newvisit.packages"> Packages Moved Inside
                         </label>
                     </div>
                     <div class="checkbox">
                         <label for="misc-2">
-                            <input type="checkbox" name="misc" id="misc-2" value="Picked Up Mail"> Picked Up Mail
+                            <input type="checkbox" name="misc" id="misc-2" value="Picked Up Mail" ng-model="newvisit.mail"> Picked Up Mail
                         </label>
                     </div>
                     <div class="checkbox">
                         <label for="misc-3">
-                            <input type="checkbox" name="misc" id="misc-3" value="Watered Plants"> Watered Plants
+                            <input type="checkbox" name="misc" id="misc-3" value="Watered Plants" ng-model="newvisit.plants"> Watered Plants
                         </label>
                     </div>
                     <div class="checkbox">
                         <label for="misc-4">
-                            <input type="checkbox" name="misc" id="misc-4" value="Other (See Message)"> Other (See Message)
+                            <input type="checkbox" name="misc" id="misc-4" value="Other (See Message)" ng-model="newvisit.other"> Other (See Message)
                         </label>
                     </div>
                 </div>
@@ -144,7 +108,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="message">Message</label>
                 <div class="col-md-4">
-                    <textarea class="form-control" id="message" name="message" placeholder="Write your message here..."></textarea>
+                    <textarea class="form-control" id="message" placeholder="Write your message here..." ng-model="newvisit.message"></textarea>
                 </div>
             </div>
 
@@ -160,25 +124,9 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="submit">Submit Visit</label>
                 <div class="col-md-4">
-                    <button ui-sref="client" ng-click="newvisit.sentEmail()" ng-submit="newvisit.sentEmail()" type="submit" id="submit " class="btn btn-primary " value="Submit ">Submit</button>
+                    <button ui-sref="client" ng-click="newvisit.sentEmail()" type="submit" id="submit " class="btn btn-primary " value="Submit">Submit</button>
                 </div>
             </div>
         </fieldset>
     </form>
-
-    <ul>
-        <li ng-repeat="clients in client.obj">
-            <a>{{newvisit.visitObj.name}}</a>
-            <a>{{clients.email}}</a>
-        </li>
-    </ul>
-
-    <section id="users">
-        <div>
-            <h2>{{newvisit.visitObj.name}}</h2>
-            <!--                    <p>{{client.obj.visitObj.email}}</p>-->
-            <p>{{newvisit.userInfo.age}}</p>
-        </div>
-    </section>
-
 </div>
