@@ -4,8 +4,22 @@ angular.module('whatsPup')
 
         var clientVisit = new Firebase('https://whatspup.firebaseio.com/Clients/' + $stateParams.user + '/' + $stateParams.clientId);
         console.log(clientVisit);
-        // Turn the info into an Object so you can grab the users info being returned
+
         this.visitObj = $firebaseObject(clientVisit);
+        console.log(this.visitObj);
+
+        clientVisit.on("value", function (snapshot) {
+            var getEmail = snapshot.val();
+            console.log("Client E-mail: " + getEmail.email);
+            return getEmail.email;
+        });
+        var clientVisitemail = new Firebase('https://whatspup.firebaseio.com/Clients/' + $stateParams.user + '/' + $stateParams.emaily);
+        console.log(clientVisitemail);
+
+
+
+
+
 
 
         $(document).ready(function () {
