@@ -1,6 +1,6 @@
-<div class="container cd-fixed-bg cd-bg-1" ng-controller="NewVisitCtrl as newvisit">
+<div class="container" ng-controller="NewVisitCtrl as newvisit">
 
-    <form class="form-horizontal newVisit cd-scrolling-bg cd-color-2" name="visitForm" id="clientVisit" ng-submit="clientVisit.submitForm">
+    <form class="form-horizontal newVisit" name="visitForm" id="clientVisit" ng-submit="clientVisit.submitForm">
         <fieldset>
             <br>
             <!-- Form Name -->
@@ -9,14 +9,16 @@
             <section id="users">
                 <div>
                     <h2>{{newvisit.visitObj.name}}</h2>
-                    <input ng-model="newvisit.getEmail" value="{{newvisit.getEmail}}">
-
                 </div>
             </section>
 
 
             <!-- Select Client -->
             <!-- remember to get client email for mailing of form -->
+             <div class="form-group">
+    <label class="col-md-12 col-sm-12 col-xs-12 text-center" for="exampleInputEmail1">Email address</label>
+    <input ng-model="newvisit.getEmail" value="{{newvisit.getEmail}}" type="email" class="col-md-4 text-center form-control" id="exampleInputEmail1">
+  </div>
 
             <!-- Food and Water -->
             <div class="form-group">
