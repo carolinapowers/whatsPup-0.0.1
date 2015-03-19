@@ -2,7 +2,7 @@
 
     <form class="form-horizontal " ng-submit="client.addClient(client.newClient) ">
 
-        <fieldset>
+        <fieldset class="fieldsettings">
             <div class="row ">
                 <a href=" " ng-show="show " ng-click="show=! show " class="col-md-11 pull-right ">
                     <button id="Cancel " name="Cancel " class="btn btn-danger btn-lg pull-right ">cancel</button>
@@ -12,9 +12,7 @@
                 </a>
 
             </div>
-            <legend class="cd-fixed-bg cd-bg-1">
-                <h2>New Client Information</h2>
-            </legend>
+
             <div ng-show="show ">
                 <div class="col-md-5 ">
                     <div class="form-group ">
@@ -84,8 +82,8 @@
 
 
                 <div class="form-group">
-                    <div class="col-md-12">
-                        <button ng-click="show = !show" id="Submit" name="Submit" class="btn btn-primary btn-lg pull-right">submit</button>
+                    <div class="addclient-submitbtn">
+                        <button ng-click="show = !show" id="Submit" name="Submit" class="btn btn-primary btn-lg">submit</button>
                     </div>
                 </div>
             </div>

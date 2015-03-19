@@ -42,10 +42,6 @@ body {
     min-height: 100%;
 }
 
-hr {
-    color: black;
-}
-
 .mask {
     position: fixed;
     right: 0;
@@ -93,6 +89,14 @@ video#bgvid {
     text-align: center;
 }
 
+.fieldsettings {
+    padding: 6em 10em 2em;
+}
+
+.addclient-submitbtn {
+    margin-left: 45%;
+}
+
 .clients {
     margin: auto;
 }
@@ -101,25 +105,27 @@ video#bgvid {
     display: inline-block;
     background: #FFF6E5;
     opacity: 0.8;
-    border: 1px solid lightgray;
+    border: 1px solid black;
     margin-top: 4em;
-    margin-left: 9%;
+    margin-left: 10%;
     padding: 2em;
     width: 80%;
     border-radius: 0.7em;
     font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
 }
 
 .newclienteven {
     display: inline-block;
     background: #f0f2f4;
     opacity: 0.8;
-    border: 1px solid lightgray;
+    border: 1px solid black;
     margin-top: 4em;
-    margin-left: 9%;
+    margin-left: 10%;
     padding: 2em;
     width: 80%;
     font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
     border-radius: 0.7em;
 }
 
