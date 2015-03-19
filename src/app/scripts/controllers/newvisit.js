@@ -19,10 +19,6 @@ angular.module('whatsPup')
         console.log(this.sendEmail);
 
 
-
-
-
-
         //        clientVisit.on("value", function (snapshot) {
         //            self.getEmail = snapshot.val();
         //            console.log("Client E-mail: " + self.getEmail.email);

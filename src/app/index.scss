@@ -14,8 +14,36 @@
 
 // injector
 // endinjector
-.container-fluid {
-    width: 90%;
+body,
+html,
+main {
+    /* important */
+    
+    height: 100%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.cd-fixed-bg {
+    min-height: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.cd-fixed-bg.cd-bg-1 {
+    background-image: url("http://thepaperwall.com/wallpapers/misc/big/big_50b1c5b55bf83cba068dd55c67ec17809adb86a1.jpg");
+}
+
+.cd-scrolling-bg {
+    min-height: 100%;
+}
+
+hr {
+    color: black;
 }
 
 .mask {
@@ -63,6 +91,50 @@ video#bgvid {
     box-shadow: 0 0 13px 3px rgba(0, 0, 0, .5);
     overflow: hidden;
     text-align: center;
+}
+
+.clients {
+    margin: auto;
+}
+
+.newclientodd {
+    display: inline-block;
+    background: #FFF6E5;
+    opacity: 0.8;
+    border: 1px solid lightgray;
+    margin-top: 4em;
+    margin-left: 9%;
+    padding: 2em;
+    width: 80%;
+    border-radius: 0.7em;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.newclienteven {
+    display: inline-block;
+    background: #f0f2f4;
+    opacity: 0.8;
+    border: 1px solid lightgray;
+    margin-top: 4em;
+    margin-left: 9%;
+    padding: 2em;
+    width: 80%;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 0.7em;
+}
+
+.btn {
+    border-radius: 0.35em;
+}
+
+input {
+    border-radius: 1px;
+}
+
+.deletebtn,
+.newvisitbtn {
+    margin-top: 1em;
+    border-radius: 3px;
 }
 
 form a:hover {

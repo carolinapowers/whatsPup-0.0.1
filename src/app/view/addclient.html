@@ -1,33 +1,33 @@
-<div class="container-fluid">
+<div class="container-fluid cd-fixed-bg cd-bg-1 ">
 
-    <form class="form-horizontal" ng-submit="client.addClient(client.newClient)">
+    <form class="form-horizontal " ng-submit="client.addClient(client.newClient) ">
 
         <fieldset>
-            <div class="row">
-                <a href="" ng-show="show" ng-click="show = !show" class="col-md-11 pull-right">
-                    <button id="Cancel" name="Cancel" class="btn btn-danger btn-lg pull-right">cancel</button>
+            <div class="row ">
+                <a href=" " ng-show="show " ng-click="show=! show " class="col-md-11 pull-right ">
+                    <button id="Cancel " name="Cancel " class="btn btn-danger btn-lg pull-right ">cancel</button>
                 </a>
-                <a href="">
-                    <button ng-hide="show" ng-click="show = !show" class="btn btn-lg btn-success newClient pull-right">add client</button>
+                <a href=" ">
+                    <button ng-hide="show " ng-click="show=! show " class="btn btn-lg btn-success newClient pull-right ">add client</button>
                 </a>
 
             </div>
-            <legend>
+            <legend class="cd-fixed-bg cd-bg-1">
                 <h2>New Client Information</h2>
             </legend>
-            <div ng-show="show">
-                <div class="col-md-5">
-                    <div class="form-group">
-                        <label class="control-label" for="name">Name</label>
-                        <div class="col-md-">
-                            <input ng-model="client.newClient.name" id="name" name="name" type="text" placeholder="Last, First" class="form-control input-md">
+            <div ng-show="show ">
+                <div class="col-md-5 ">
+                    <div class="form-group ">
+                        <label class="control-label " for="name ">Name</label>
+                        <div class="col-md- ">
+                            <input ng-model="client.newClient.name " id="name " name="name " type="text " placeholder="Last, First " class="form-control input-md ">
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label class="control-label" for="pet">Pet's Name</label>
-                        <div class="">
-                            <input ng-model="client.newClient.pet" id="pet" name="pet" type="text" placeholder="Pet's Name" class="form-control input-md">
+                    <div class="form-group ">
+                        <label class="control-label " for="pet ">Pet's Name</label>
+                        <div class=" ">
+                            <input ng-model="client.newClient.pet " id="pet " name="pet " type="text " placeholder="Pet 's Name" class="form-control input-md">
                         </div>
                     </div>
 
@@ -85,7 +85,7 @@
 
                 <div class="form-group">
                     <div class="col-md-12">
-                        <button id="Submit" name="Submit" class="btn btn-primary btn-lg pull-right">submit</button>
+                        <button ng-click="show = !show" id="Submit" name="Submit" class="btn btn-primary btn-lg pull-right">submit</button>
                     </div>
                 </div>
             </div>
@@ -94,31 +94,26 @@
 </div>
 
 
-<div class="container-fluid">
+<div class="container-fluid clientscontainer cd-fixed-bg cd-bg-1 ">
     <hr>
-    <span><h1>Customer Database</h1></span>
+    <span><h1>Clients List</h1></span>
     <hr>
     <!-- <a href="">
         <button class="btn btn-lg btn-success newClient pull-right">new client</button>
     </a> -->
-    <div ng-repeat="clients in client.obj" class="row clients">
-        <div class="cust">
-            <p>{{ clients.name }}</p>
-            <p>{{ clients.pet }}</p>
-            <p>{{ clients.phone }}</p>
-            <p>{{ clients.email }}</p>
-            <p>{{ clients.street }} {{ clients.city }} {{clients.state}} {{clients.zip }}
-
-                <a ui-sref="newvisit({user: client.user.$id, clientId: clients.$id})" class="btn btn-lg btn-info pull-right">new visit</a>
-                <a ng-click="client.deleteClient(clients)">
-                    <button class="btn btn-lg btn-danger pull-right">delete</button>
-                </a>
-            </p>
-
+    <div ng-repeat="clients in client.obj" class="row clients cd-fixed-bg cd-bg-1">
+        <div class="cd-bg-1" ng-class-odd=" 'newclientodd ' " ng-class-even=" 'newclienteven ' ">
+            <div class="cd-scrolling-bg cd-color-2">
+                <p>Name: {{ clients.name }}</p>
+                <p>Pet: {{ clients.pet }}</p>
+                <p>Phone: {{ clients.phone }}</p>
+                <p>E-mail: {{ clients.email }}</p>
+                <p>Address: {{ clients.street }} {{ clients.city }} {{clients.state}} {{clients.zip }}</p>
+                <a ui-sref="newvisit({user: client.user.$id, clientId: clients.$id}) " class="btn btn-md btn-info newvisitbtn">new visit</a>
+                <a ng-click="client.deleteClient(clients) " class="btn btn-md btn-danger deletebtn">delete</a>
+                </p>
+            </div>
         </div>
 
     </div>
-</div>
-</div>
-</div>
 </div>

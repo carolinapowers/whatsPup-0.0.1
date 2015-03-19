@@ -1,6 +1,6 @@
-<div class="container" ng-controller="NewVisitCtrl as newvisit">
+<div class="container cd-fixed-bg cd-bg-1" ng-controller="NewVisitCtrl as newvisit">
 
-    <form class="form-horizontal newVisit" name="visitForm" id="clientVisit" ng-submit="clientVisit.submitForm">
+    <form class="form-horizontal newVisit cd-scrolling-bg cd-color-2" name="visitForm" id="clientVisit" ng-submit="clientVisit.submitForm">
         <fieldset>
             <br>
             <!-- Form Name -->
@@ -10,7 +10,7 @@
                 <div>
                     <h2>{{newvisit.visitObj.name}}</h2>
                     <input ng-model="newvisit.getEmail" value="{{newvisit.getEmail}}">
-                    <p>{{newvisit.getEmail}}</p>
+
                 </div>
             </section>
 
