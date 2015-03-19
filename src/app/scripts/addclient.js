@@ -43,9 +43,9 @@ angular.module('whatsPup')
 
        };
 
-       this.addClient = function (user) {
-           this.obj.$add(user);
-           return this.newUser = {
+       this.addClient = function (newClient) {
+           this.obj.$add(newClient);
+           return this.newClient = {
                name: '',
                pet: '',
                email: '',
