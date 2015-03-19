@@ -90,7 +90,16 @@ video#bgvid {
 }
 
 .fieldsettings {
-    padding: 6em 10em 2em;
+    padding: 7em 12% 3%;
+}
+
+.clientlist {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.clientlist h1 {
+    padding-left: 10%;
 }
 
 .addclient-submitbtn {
