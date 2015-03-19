@@ -14,8 +14,44 @@
 
 // injector
 // endinjector
-.container-fluid {
-    width: 90%;
+body,
+html,
+main {
+    /* important */
+    
+    height: 100%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-image: url("http://thepaperwall.com/wallpapers/misc/big/big_50b1c5b55bf83cba068dd55c67ec17809adb86a1.jpg");
+margin-bottom: 5%;
+    min-height: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.navbar {
+    color: black;
+}
+
+.cd-fixed-bg {
+    min-height: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.cd-fixed-bg.cd-bg-1 {
+    background-image: url("http://thepaperwall.com/wallpapers/misc/big/big_50b1c5b55bf83cba068dd55c67ec17809adb86a1.jpg");
+margin-bottom: 5%;
+}
+
+.cd-scrolling-bg {
+    min-height: 100%;
 }
 
 .mask {
@@ -65,12 +101,73 @@ video#bgvid {
     text-align: center;
 }
 
+.fieldsettings {
+    padding: 7em 12% 2%;
+}
+
+.clientlist {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+.clientlist h1 {
+    padding-left: 42%;
+}
+
+.addclient-submitbtn {
+    margin-left: 45%;
+}
+
+.clients {
+    margin: auto;
+}
+
+.newclientodd {
+    display: inline-block;
+    background: #FFF6E5;
+    opacity: 0.8;
+    border: 1px solid black;
+    margin-top: 4em;
+    margin-left: 10%;
+    padding: 2em;
+    width: 80%;
+    border-radius: 0.7em;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+}
+
+.newclienteven {
+    display: inline-block;
+    background: #f0f2f4;
+    opacity: 0.8;
+    border: 1px solid black;
+    margin-top: 4em;
+    margin-left: 10%;
+    padding: 2em;
+    width: 80%;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    border-radius: 0.7em;
+}
+
+.btn {
+    border-radius: 0.35em;
+}
+
+input {
+    border-radius: 1px;
+}
+
+.deletebtn,
+.newvisitbtn {
+    margin-top: 1em;
+    border-radius: 3px;
+}
+
 form a:hover {
     color: #fff;
     text-decoration: none;
 }
-
-
 
 .fblogin {
     font-size: 2em;
