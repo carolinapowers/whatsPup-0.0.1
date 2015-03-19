@@ -1,3 +1,4 @@
+<div class="blue-mask"></div>
 <div class="container-fluid cd-fixed-bg cd-bg-1 ">
 
     <form class="form-horizontal " ng-submit="client.addClient(client.newClient) ">
@@ -10,10 +11,9 @@
                 <a href=" ">
                     <button ng-hide="show " ng-click="show=! show " class="btn btn-lg btn-success newClient pull-right ">add client</button>
                 </a>
-
             </div>
 
-            <div ng-show="show ">
+            <div ng-show="show">
                 <div class="col-md-5 ">
                     <div class="form-group ">
                         <label class="control-label " for="name ">Name</label>
@@ -44,11 +44,7 @@
                     </div>
                 </div>
 
-
-
-                <div class="col-md-2">
-                </div>
-
+                <div class="col-md-2"></div><!--giving some padding in between the forms col-->
 
                 <div class="col-md-5">
                     <div class="form-group">
