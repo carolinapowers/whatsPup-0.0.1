@@ -16,28 +16,25 @@
             <div ng-show="show">
                 <div class="col-md-5 ">
                     <div class="form-group ">
-                        <label class="control-label " for="name ">Name</label>
+                        
                         <div class="col-md- ">
-                            <input ng-model="client.newClient.name " id="name " name="name " type="text " placeholder="Last, First " class="form-control input-md ">
+                            <input ng-model="client.newClient.name " id="name " name="name " type="text " placeholder="Full Name" class="form-control input-md ">
                         </div>
                     </div>
 
                     <div class="form-group ">
-                        <label class="control-label " for="pet ">Pet's Name</label>
                         <div class=" ">
                             <input ng-model="client.newClient.pet " id="pet " name="pet " type="text " placeholder="Pet 's Name" class="form-control input-md">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label" for="email">Email</label>
                         <div class="">
                             <input ng-model="client.newClient.email" id="email" name="email" type="text" placeholder="email@example.com" class="form-control input-md">
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label class="control-label" for="phone">Phone Number</label>
+                    <div class="form-group"> 
                         <div class="">
                             <input ng-model="client.newClient.phone" id="phone" name="phone" type="text" placeholder="555-867-5309" class="form-control input-md">
                         </div>
@@ -90,7 +87,7 @@
 
 <div class="clientscontainer cd-fixed-bg cd-bg-1 ">
     <hr>
-    <span class="clientlist"><h1><strong>Clients List</strong></h1></span>
+    <span class="clientlist"><h1><strong>Clients</strong></h1></span>
     <hr>
     <!-- <a href="">
         <button class="btn btn-lg btn-success newClient pull-right">new client</button>
@@ -98,11 +95,11 @@
     <div ng-repeat="clients in client.obj" class=" col-md-6 cd-fixed-bg cd-bg-1">
         <div class="cd-bg-1 newclienteven">
             <div class="cd-scrolling-bg cd-color-2">
-                <p><big>{{ clients.name }}</big></p>
-                <p>Pet: {{ clients.pet }}</p>
-                <p>Phone: {{ clients.phone }}</p>
-                <p>E-mail: {{ clients.email }}</p>
-                <p>Address: {{ clients.street }} {{ clients.city }} {{clients.state}} {{clients.zip }}</p>
+                <p class="clientname"><big><strong>{{ clients.name }}</strong></big></p>
+                <p><em>Pet:</em> {{ clients.pet }}</p>
+                <p><strong>Phone:</strong> {{ clients.phone }}</p>
+                <p><strong>E-mail:</strong> {{ clients.email }}</p>
+                <p><strong>Address:</strong> {{ clients.street }} {{ clients.city }} {{clients.state}} {{clients.zip }}</p>
                 <a ui-sref="newvisit({user: client.user.$id, clientId: clients.$id}) " class="btn btn-md btn-info newvisitbtn">new visit</a>
                 <a ng-click="client.deleteClient(clients) " class="btn btn-md btn-danger deletebtn">delete</a>
                 </p>
