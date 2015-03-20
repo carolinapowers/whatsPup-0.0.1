@@ -1,7 +1,7 @@
 <div class="container" ng-controller="NewVisitCtrl as newvisit">
 
     <form class="form-horizontal newVisit" name="visitForm" id="clientVisit" ng-submit="clientVisit.submitForm">
-        <fieldset>
+        <fieldset >
             <br>
             <!-- Form Name -->
             <legend>New Visit</legend>
@@ -12,17 +12,61 @@
                 </div>
             </section>
 
+<div class="newvisitctn">
 
-            <!-- Select Client -->
-            <!-- remember to get client email for mailing of form -->
+<div class="col-md-5">
              <div class="form-group">
-    <label class="col-md-12 col-sm-12 col-xs-12 text-center" for="exampleInputEmail1">Email address</label>
+    
     <input ng-model="newvisit.getEmail" value="{{newvisit.getEmail}}" type="email" class="col-md-4 text-center form-control" id="exampleInputEmail1">
   </div>
 
-            <!-- Food and Water -->
+           
+                        <!-- Misc -->
             <div class="form-group">
-               <label class="col-md-4 control-label" for="food"> Fresh Food and Water</label>
+                <label class="col-md-4 control-label" for="misc">Miscellaneous Tasks</label>
+                <div class="col-md-4">
+                    <div class="checkbox">
+                        <label for="misc-0">
+                            <input type="checkbox" name="misc" id="misc-0" value="Cleaned Up Pet Mess" ng-model="newvisit.mess"> Cleaned Up Pet Mess
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="misc-1">
+                            <input type="checkbox" name="misc" id="misc-1" value="Packages Moved Inside" ng-model="newvisit.packages"> Packages Moved Inside
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="misc-2">
+                            <input type="checkbox" name="misc" id="misc-2" value="Picked Up Mail" ng-model="newvisit.mail"> Picked Up Mail
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="misc-3">
+                            <input type="checkbox" name="misc" id="misc-3" value="Watered Plants" ng-model="newvisit.plants"> Watered Plants
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label for="misc-4">
+                            <input type="checkbox" name="misc" id="misc-4" value="Other (See Message)" ng-model="newvisit.other"> Other (See Message)
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            
+
+            <!-- Message -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="message">Message</label>
+                <div class="col-md-7">
+                    <textarea class="form-control" id="message" placeholder="Write your message here..." ng-model="newvisit.message"></textarea>
+                </div>
+            </div> 
+            </div>
+            <div class="col-md-1"></div>
+  <div class="col-md-5"><!-- Food and Water -->
+            <div class="form-group">
+               <label class="control-label" for="food"> Fresh Food and Water</label>
                <div class="col-md-4">
                    <div class="checkbox">
                        <label for="food-0">
@@ -36,8 +80,7 @@
                    </div>
                </div>
            </div>
-
-            <!-- Play / Walk Duration -->
+          <!-- Play / Walk Duration -->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="play">Playtime or Walk Duration</label>
                 <div class="col-md-4">
@@ -77,45 +120,7 @@
                 </div>
             </div>
 
-            <!-- Misc -->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="misc">Miscellaneous Tasks</label>
-                <div class="col-md-4">
-                    <div class="checkbox">
-                        <label for="misc-0">
-                            <input type="checkbox" name="misc" id="misc-0" value="Cleaned Up Pet Mess" ng-model="newvisit.mess"> Cleaned Up Pet Mess
-                        </label>
-                    </div>
-                    <div class="checkbox">
-                        <label for="misc-1">
-                            <input type="checkbox" name="misc" id="misc-1" value="Packages Moved Inside" ng-model="newvisit.packages"> Packages Moved Inside
-                        </label>
-                    </div>
-                    <div class="checkbox">
-                        <label for="misc-2">
-                            <input type="checkbox" name="misc" id="misc-2" value="Picked Up Mail" ng-model="newvisit.mail"> Picked Up Mail
-                        </label>
-                    </div>
-                    <div class="checkbox">
-                        <label for="misc-3">
-                            <input type="checkbox" name="misc" id="misc-3" value="Watered Plants" ng-model="newvisit.plants"> Watered Plants
-                        </label>
-                    </div>
-                    <div class="checkbox">
-                        <label for="misc-4">
-                            <input type="checkbox" name="misc" id="misc-4" value="Other (See Message)" ng-model="newvisit.other"> Other (See Message)
-                        </label>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Message -->
-            <div class="form-group">
-                <label class="col-md-4 control-label" for="message">Message</label>
-                <div class="col-md-4">
-                    <textarea class="form-control" id="message" placeholder="Write your message here..." ng-model="newvisit.message"></textarea>
-                </div>
-            </div>
 
             <!-- Image upload -->
             <div class="form-group">
@@ -126,12 +131,15 @@
             </div>
 
             <!-- Submit -->
-            <div class="form-group">
+            
+</div>
+<div class="form-group">
                 <label class="col-md-4 control-label" for="submit">Submit Visit</label>
                 <div class="col-md-4">
                     <button ui-sref="client" ng-click="newvisit.sentEmail()" type="submit" id="submit " class="btn btn-primary " value="Submit">Submit</button>
                 </div>
             </div>
+</div>       
         </fieldset>
     </form>
 </div>
