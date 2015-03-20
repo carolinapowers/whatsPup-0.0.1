@@ -24,7 +24,8 @@ main {
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background-image: url("https://animalfoundationofamerica.com/wp-content/uploads/2014/04/High-Quality-Dog-Photo-194028b.jpg");
+    background-image: url("http://www.thedogtrainingsecret.com/images/DSC_4423.JPG");
+//    background-image: url("https://animalfoundationofamerica.com/wp-content/uploads/2014/04/High-Quality-Dog-Photo-194028b.jpg");
     margin-bottom: 5%;
     min-height: 100%;
     background-size: cover;
@@ -43,8 +44,7 @@ body {
 }
 
 .cd-fixed-bg.cd-bg-1 {
-    
-margin-bottom: 5%;
+    margin-bottom: 5%;
     background-position: 0 5px ;
     
 }
@@ -64,7 +64,7 @@ margin-bottom: 5%;
     z-index: -99;
     background-color: #eb9565;
     background-image: url(http://andershede.com/wp-content/uploads/2014/07/Fermaten.svg) no-repeat fixed;
-    opacity: 0.5;
+    opacity: 0.5; 
 }
 
 video#bgvid {
@@ -95,11 +95,11 @@ overflow: hidden;
     margin: 0;
 }
 .loginform {
-    margin-top: 200px;
+    margin-top: 170px;
     margin-left: auto;
     margin-right: auto;
     width: 343px;
-    height: 330px;
+    height: 400px;
     padding: 30px;
     badding-top: 15px;
     background-clip: padding-box;
@@ -118,8 +118,9 @@ overflow: hidden;
 }
 
 .clientlist h1 {
-    text-align: left;
+    text-align: center;
   display: block;
+    color: #fff;
 }
 
 .addclient-submitbtn {
@@ -133,13 +134,13 @@ overflow: hidden;
 
 .newclienteven {
     display: inline-block;
-    background: #f0f2f4;
-    opacity: 0.8;
+    background-color: rgba(0, 0, 0, 0.6);
     margin-top: 1em;
     margin-left: 10%;
     padding: 2em;
     width: 80%;
-    font-weight: 700;   
+    font-weight: 700;  
+    color: #fff;
 }
 
 .btn {
@@ -162,15 +163,16 @@ form a:hover {
 }
 
 .fblogin {
-    font-size: 1.4em;
+    font-size: 1.3em;
     color: #fff;
     font-weight: 200;
     margin-top: 2.5ex;
+    line-height: 3ex;
     }
 
 
 .sitterbtn {
-    margin-top: 2em;
+    margin-top: 2.4ex;
     background-color: cornflowerblue;
     color: #fff;
     font-size: 1.3em;
