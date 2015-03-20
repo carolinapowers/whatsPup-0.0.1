@@ -16,8 +16,10 @@
 
 <div class="col-md-5">
              <div class="form-group">
-    
-    <input ng-model="newvisit.getEmail" value="{{newvisit.getEmail}}" type="email" class="col-md-4 text-center form-control" id="exampleInputEmail1">
+             <label class="col-md-4 control-label" for="email"></label> 
+    <div class="col-md-8">
+    <input ng-model="newvisit.getEmail" value="{{newvisit.getEmail}}" type="email" class="col-md-4 text-center form-control" id="exampleInputEmail1"> 
+    </div>
   </div>
 
            
@@ -58,7 +60,7 @@
             <!-- Message -->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="message">Message</label>
-                <div class="col-md-7">
+                <div class="col-md-8">
                     <textarea class="form-control" id="message" placeholder="Write your message here..." ng-model="newvisit.message"></textarea>
                 </div>
             </div> 
