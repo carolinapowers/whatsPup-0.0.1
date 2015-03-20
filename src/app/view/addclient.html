@@ -95,10 +95,10 @@
     <!-- <a href="">
         <button class="btn btn-lg btn-success newClient pull-right">new client</button>
     </a> -->
-    <div ng-repeat="clients in client.obj" class="row clients cd-fixed-bg cd-bg-1">
-        <div class="cd-bg-1" ng-class-odd=" 'newclientodd ' " ng-class-even=" 'newclienteven ' ">
+    <div ng-repeat="clients in client.obj" class=" col-md-6 cd-fixed-bg cd-bg-1">
+        <div class="cd-bg-1 newclienteven">
             <div class="cd-scrolling-bg cd-color-2">
-                <p>Name: {{ clients.name }}</p>
+                <p><big>{{ clients.name }}</big></p>
                 <p>Pet: {{ clients.pet }}</p>
                 <p>Phone: {{ clients.phone }}</p>
                 <p>E-mail: {{ clients.email }}</p>

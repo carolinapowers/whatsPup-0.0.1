@@ -24,7 +24,7 @@ main {
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background-image: url("http://i59.tinypic.com/25ukwur.jpg");
+    background-image: url("https://animalfoundationofamerica.com/wp-content/uploads/2014/04/High-Quality-Dog-Photo-194028b.jpg");
     margin-bottom: 5%;
     min-height: 100%;
     background-size: cover;
@@ -43,8 +43,10 @@ body {
 }
 
 .cd-fixed-bg.cd-bg-1 {
-    background-image: url("http://i59.tinypic.com/25ukwur.jpg");
+    
 margin-bottom: 5%;
+    background-position: 0 5px ;
+    
 }
 
 .cd-scrolling-bg {
@@ -79,26 +81,29 @@ video#bgvid {
 
 .whitelogo {
 overflow: hidden;
-  margin-top: 10%;
-  margin-left: 42%;
+  margin-left: 2%;
+    margin-bottom: 2%;
   text-align: center;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 1px;
 }
+
 
 .whitelogo p {
     font-size: 2.5em;
+    margin: 0;
 }
 .loginform {
-    margin-top: 1%;
+    margin-top: 200px;
     margin-left: auto;
     margin-right: auto;
     width: 343px;
-    height: 300px;
+    height: 330px;
     padding: 30px;
-    border: 1px solid rgba(0, 0, 0, .2);
-    border-radius: 5px;
+    badding-top: 15px;
     background-clip: padding-box;
     background: rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 13px 3px rgba(0, 0, 0, .5);
     overflow: hidden;
     text-align: center;
 }
@@ -113,7 +118,7 @@ overflow: hidden;
 }
 
 .clientlist h1 {
-    text-align: center;
+    text-align: left;
   display: block;
 }
 
@@ -125,17 +130,6 @@ overflow: hidden;
     margin: auto;
 }
 
-.newclientodd {
-    display: inline-block;
-    background: #FFF6E5;
-    opacity: 0.8;
-    margin-top: 1em;
-    margin-left: 10%;
-    padding: 2em;
-    width: 80%; 
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
-}
 
 .newclienteven {
     display: inline-block;
@@ -145,7 +139,6 @@ overflow: hidden;
     margin-left: 10%;
     padding: 2em;
     width: 80%;
-    font-family: 'Open Sans', sans-serif;
     font-weight: 700;   
 }
 
@@ -172,13 +165,12 @@ form a:hover {
     font-size: 1.4em;
     color: #fff;
     font-weight: 200;
+    margin-top: 2.5ex;
     }
 
 
 .sitterbtn {
     margin-top: 2em;
-    border: 1px solid #000;
-    border-radius: 2px;
     background-color: cornflowerblue;
     color: #fff;
     font-size: 1.3em;
