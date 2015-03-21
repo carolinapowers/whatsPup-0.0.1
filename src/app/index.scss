@@ -83,11 +83,11 @@ video#bgvid {
 }
 
 .loginform {
-    margin-top: 11%;
-    margin-left: 13%;
+    margin-top: 8em;
+    margin-left: auto;
     margin-right: auto;
-    width: 343px;
-    height: 400px;
+    width: 25em;
+    height: 28em;
     padding: 30px;
     background-clip: padding-box;
     background: rgba(0, 0, 0, 0.4);
@@ -123,6 +123,7 @@ video#bgvid {
     line-height: 3ex;
      letter-spacing: 0.1ex;
 }
+
 .clientname{
     font-size: 1.3em;  
 }
@@ -225,21 +226,11 @@ label {
 @media screen and (max-width:768px) {
     
   
-    .loginform {
-    margin-top:20%;
-    margin-left:10%;
-    margin-right: auto;
-    
-}
 }
 
 @media screen and (max-width: 481px) {
-    .loginform {
-    margin-top:30%;
-    margin-left: 4%;    
-    
-}
-    
+
+   
     .cd-fixed-bg {
         margin-left: -15px;
         margin-right: -15px;               
@@ -248,4 +239,14 @@ label {
         padding-left: 0;
         margin-bottom: 30%;
     }
+}
+
+@media screen and (max-width: 321px) {
+    
+    .loginform {
+    margin-top: 8em;
+    width: 21em;
+    height: 27em;
+    padding: 2em 1em 0;
+}
 }
