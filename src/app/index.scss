@@ -19,39 +19,9 @@ html,
 main {
     /* important */
     
-    height: 100%;
+ 
 }
 
-body {
-    font-family: 'Open Sans', sans-serif;
-    background-image: url("http://i58.tinypic.com/k9avb6.jpg");
-    min-height: 100%;
-    mon-width: 100%;
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center center;
-   
-}
-
-
-.cd-fixed-bg {
-    min-height: 100%;
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-
-.cd-fixed-bg.cd-bg-1 {
-    margin-bottom: 5%;
-    background-position: 0 5px ;
-    
-}
-
-.cd-scrolling-bg {
-    min-height: 100%;
-}
 
 .mask {
     position: fixed;
@@ -62,10 +32,39 @@ body {
     width: auto;
     height: auto;
     z-index: -99;
-    background-color: #eb9565;
-    background-image: url(http://andershede.com/wp-content/uploads/2014/07/Fermaten.svg) no-repeat fixed;
+    background-color: #eb9565; 
     opacity: 0.5; 
 }
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-image: url("http://i58.tinypic.com/k9avb6.jpg");
+    min-height: 100%;
+    min-width: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;  
+}
+
+
+
+//.cd-fixed-bg {
+//    min-height: 100%;
+//    background-size: cover;
+//    background-attachment: fixed;
+//    background-repeat: no-repeat;
+//    background-position: center center;
+//}
+
+.cd-fixed-bg.cd-bg-1 {
+    margin-bottom: 5%;   
+}
+
+//.cd-scrolling-bg {
+//    min-height: 100%;
+//}
+
 
 video#bgvid {
     position: fixed;
@@ -93,6 +92,7 @@ video#bgvid {
     font-size: 2.5em;
     margin: 0;
 }
+
 .loginform {
     margin-top: 140px;
     margin-left: 160px;
@@ -102,7 +102,7 @@ video#bgvid {
     padding: 30px;
     badding-top: 15px;
     background-clip: padding-box;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.4);
     overflow: hidden;
     text-align: center;
 }
@@ -111,14 +111,10 @@ video#bgvid {
     padding: 5em 6% 2%;
 }
 
-.clientlist {
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-}
 
 .clientlist h1 {
     text-align: center;
-  display: block;
+    display: block;
     color: #fff;
 }
 
@@ -126,9 +122,7 @@ video#bgvid {
     text-align: center;
 }
 
-.clients {
-    margin: auto;
-}
+
 
 
 .newclienteven {
@@ -144,8 +138,7 @@ video#bgvid {
      letter-spacing: 0.1ex;
 }
 .clientname{
-    font-size: 1.3em;
-  
+    font-size: 1.3em;  
 }
 .btn {
     border-radius: 0;
@@ -191,15 +184,15 @@ form a:hover {
 }
 
 .flogin-icon {
-background-color: #3b5998;
+  background-color: #3b5998;
   padding: 0.5em 1em;
   float: left;
   display: inline-block;
 }
 
 .flogin-text {
-      display: inline-block;
-  padding: 0.5em;
+    display: inline-block;
+    padding: 0.5em;
 }
 .clients {
     clear: both;
@@ -208,22 +201,24 @@ background-color: #3b5998;
 .newvisitctn {
     height: 160%;
     background-color: rgba(0, 0, 0, 0.6);
-    padding-top: 2em;
-    padding-bottom: 4em;
+    padding-top: 4em;
+    padding-bottom: 3em;
+    padding-left: 4em;
     margin-top: 1em;
+    margin-bottom: 13%;
 }
 
 .test {
     height: 160%;
     background-color: rgba(0, 0, 0, 0.6);
-    padding: 2em 5em 4em;
-    
+    padding: 2em 5em 2em;    
     margin-top: 1em;
     
 }
 
 label {
     color: lightgray;
+    font-size: 1.2em;
 }
 
 
@@ -232,10 +227,6 @@ label {
     box-sizing: border-box;
     clear: both;
     padding-top: 3ex;
-}
-
-label {
-    font-size: 1.2em;
 }
 
 .checkbox {
