@@ -18,14 +18,14 @@ body,
 html,
 main {
     /* important */
-    
+    font-family: 'Open Sans', sans-serif;
  
 }
 
 
 
-body {
-    font-family: 'Open Sans', sans-serif;
+.backgroundctn {
+    
     background-image: url("http://i58.tinypic.com/k9avb6.jpg");
     min-height: 100%;
     min-width: 100%;
@@ -33,6 +33,7 @@ body {
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center center;  
+   
 }
 
 
@@ -51,7 +52,7 @@ body {
 
 
 .cd-fixed-bg.cd-bg-1 {
-    margin-bottom: 5%;   
+    padding-bottom: 5%;   
 }
 
 
