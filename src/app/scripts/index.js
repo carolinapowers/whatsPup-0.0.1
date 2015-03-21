@@ -28,23 +28,18 @@ angular.module('whatsPup', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', '
     })
 
     .state('owner', {
-            url: '/owner',
-            templateUrl: 'app/view/ownerpage.html',
-            controller: 'OwnerBtnCtrl',
-            controllerAs: 'ownerbtn'
-        })
-        // .state('newvisit', {
-        //         url: '/newvisit',
-        //         templateUrl: 'app/view/newvisit.html',
-        //         controller: 'NewVisitCtrl',
-        //         controllerAs: 'newvisit'
-        // })
-        .state('newvisit', {
-            templateUrl: 'app/view/newvisit.html',
-            url: '/newvisit/:user/:clientId/',
-            controller: 'NewVisitCtrl',
-            controllerAs: 'newvisit'
-        })
+        url: '/owner',
+        templateUrl: 'app/view/ownerpage.html',
+        controller: 'OwnerBtnCtrl',
+        controllerAs: 'ownerbtn'
+    })
+
+    .state('newvisit', {
+        templateUrl: 'app/view/newvisit.html',
+        url: '/newvisit/:user/:clientId/',
+        controller: 'NewVisitCtrl',
+        controllerAs: 'newvisit'
+    })
 
 
     $urlRouterProvider.otherwise('/');
