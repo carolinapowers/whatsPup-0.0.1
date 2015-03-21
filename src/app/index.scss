@@ -24,8 +24,9 @@ main {
 
 body {
     font-family: 'Open Sans', sans-serif;
-    background-image: url("http://www.thedogtrainingsecret.com/images/DSC_4423.JPG");
+    background-image: url("http://i58.tinypic.com/k9avb6.jpg");
     min-height: 100%;
+    mon-width: 100%;
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -93,8 +94,8 @@ video#bgvid {
     margin: 0;
 }
 .loginform {
-    margin-top: 160px;
-    margin-left: auto;
+    margin-top: 140px;
+    margin-left: 160px;
     margin-right: auto;
     width: 343px;
     height: 400px;
@@ -107,7 +108,7 @@ video#bgvid {
 }
 
 .fieldsettings {
-    padding: 7em 12% 2%;
+    padding: 5em 6% 2%;
 }
 
 .clientlist {
@@ -152,7 +153,7 @@ video#bgvid {
 
 input {
     border-radius: 0;
-    margin-top: 2em;
+    margin-top: 1ex;
 }
 
 .deletebtn,
@@ -205,10 +206,38 @@ background-color: #3b5998;
 }
 
 .newvisitctn {
-    height: 400px;
+    height: 160%;
     background-color: rgba(0, 0, 0, 0.6);
+    padding-top: 2em;
+    padding-bottom: 4em;
+    margin-top: 1em;
+}
+
+.test {
+    height: 160%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2em 5em 4em;
+    
+    margin-top: 1em;
+    
 }
 
 label {
     color: lightgray;
+}
+
+
+.newvisit-submitbtn {
+    text-align: center;
+    box-sizing: border-box;
+    clear: both;
+    padding-top: 3ex;
+}
+
+label {
+    font-size: 1.2em;
+}
+
+.checkbox {
+    padding-bottom: 0.5em;
 }
