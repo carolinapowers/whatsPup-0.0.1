@@ -84,7 +84,7 @@ video#bgvid {
 }
 
 .loginform {
-    margin-top: 7em;
+    margin-top: 10em;
     margin-left: auto;
     margin-right: auto;
     width: 23em;
@@ -226,7 +226,25 @@ label {
 
 @media screen and (max-width:768px) {
     
-  
+    .mainctn {
+    background-image: url("http://i61.tinypic.com/2dma8nq.jpg");
+    min-height: 100%;
+    min-width: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center; 
+    padding-top: 1em;  
+        padding-bottom: 3em;
+    }
+    
+   .mask {
+       display: none;
+       
+   }
+    video#bgvid{
+        display:none;
+    } 
 }
 
 @media screen and (max-width: 481px) {
