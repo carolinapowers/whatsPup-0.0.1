@@ -23,18 +23,6 @@ main {
 }
 
 
-.mask {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -99;
-    background-color: #eb9565; 
-    opacity: 0.5; 
-}
 
 body {
     font-family: 'Open Sans', sans-serif;
@@ -48,22 +36,23 @@ body {
 }
 
 
+.mask {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -99;
+    background-color: #eb9565; 
+    opacity: 0.5; 
+}
 
-//.cd-fixed-bg {
-//    min-height: 100%;
-//    background-size: cover;
-//    background-attachment: fixed;
-//    background-repeat: no-repeat;
-//    background-position: center center;
-//}
 
 .cd-fixed-bg.cd-bg-1 {
     margin-bottom: 5%;   
 }
-
-//.cd-scrolling-bg {
-//    min-height: 100%;
-//}
 
 
 video#bgvid {
@@ -94,13 +83,12 @@ video#bgvid {
 }
 
 .loginform {
-    margin-top: 140px;
-    margin-left: 160px;
+    margin-top: 11%;
+    margin-left: 13%;
     margin-right: auto;
     width: 343px;
     height: 400px;
     padding: 30px;
-    badding-top: 15px;
     background-clip: padding-box;
     background: rgba(0, 0, 0, 0.4);
     overflow: hidden;
@@ -121,8 +109,6 @@ video#bgvid {
 .addclient-submitbtn {
     text-align: center;
 }
-
-
 
 
 .newclienteven {
@@ -231,4 +217,35 @@ label {
 
 .checkbox {
     padding-bottom: 0.5em;
+}
+
+
+/**********Media Query*********/
+
+@media screen and (max-width:768px) {
+    
+  
+    .loginform {
+    margin-top:20%;
+    margin-left:10%;
+    margin-right: auto;
+    
+}
+}
+
+@media screen and (max-width: 481px) {
+    .loginform {
+    margin-top:30%;
+    margin-left: 4%;    
+    
+}
+    
+    .cd-fixed-bg {
+        margin-left: -15px;
+        margin-right: -15px;               
+}
+    .newvisitctn {
+        padding-left: 0;
+        margin-bottom: 30%;
+    }
 }
