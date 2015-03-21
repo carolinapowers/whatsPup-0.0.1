@@ -1,3 +1,4 @@
+
 angular.module('whatsPup')
     .controller('NewVisitCtrl', function (Auth, $state, $stateParams, $firebaseObject, $http) {
         var self = this;
@@ -20,7 +21,7 @@ angular.module('whatsPup')
 
         this.image = '';
 
-
+     
         document.getElementById("upload_widget_opener").addEventListener("click", function() {
             cloudinary.openUploadWidget({ 
                 cloud_name: 'jaredstevick',
