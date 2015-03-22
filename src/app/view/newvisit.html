@@ -1,5 +1,5 @@
 <div class="container backgroundctn" ng-controller="NewVisitCtrl as newvisit">
-  <section id="users" style="padding-top: 5em; text-align: center" >
+  <section id="users" style="padding-top: 5em; text-align: center; padding-bottom:0.5em" >
 <hr>
                 <div>
                     <h2 style="color: #fff">{{newvisit.visitObj.name}}</h2>
@@ -123,13 +123,16 @@
                 
             </div> 
             <!-- trying out cloudinary -->
-<!--              <div ng-include="'upload.html'"></div>-->
+              <div ng-include="'app/view/upload.html'"></div>
+<!--
             
             <div class=" pull-right">
             <a id="upload_widget_opener" class="btn btn-success">Upload images</a>
 +            <input type="text" ng-model="newvisit.image">
             </div>
-            </div>
+-->
+            
+    </div>
             
 <!-- end cloudinary -->
 
