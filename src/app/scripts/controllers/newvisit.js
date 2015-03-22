@@ -3,6 +3,7 @@ angular.module('whatsPup')
     .controller('NewVisitCtrl', function (Auth, $state, $stateParams, $firebaseObject, $http) {
         var self = this;
         this.loggedIn = Auth.loggedIn;
+//        this.uploadImg = Upload.uploadImg;
 
         var clientVisit = new Firebase('https://whatspup.firebaseio.com/Clients/' + $stateParams.user + '/' + $stateParams.clientId);
         console.log(clientVisit);
@@ -24,15 +25,36 @@ angular.module('whatsPup')
      
         document.getElementById("upload_widget_opener").addEventListener("click", function() {
             cloudinary.openUploadWidget({ 
-                cloud_name: 'jaredstevick',
-                upload_preset: 'xnpszqid'
+                cloud_name: 'whatspup',
+                upload_preset: 'npnf6uka'
             }, 
             function(error, result) { 
                 console.log(result[0].url)
-                self.image = result[0].url;
+//                self.image = result[0].url;
+//                return self.image 
+                return self.image = result[0].url
             });
-            return self.image 
+            
         }, false);
+    
+//      cloudinary.setCloudName('whatspup');
+//     document.getElementById("upload_widget_opener").addEventListener("click", function() {
+//         cloudinary.openUploadWidget({upload_preset: 'npnf6uka'}, 
+//  function(error, result) {console.log(error, result)}) }, false);
+//
+//    cloudinary.openUploadWidget({ cloud_name: 'whatspup', upload_preset: 'npnf6uka'}, 
+//      function(error, result) { console.log(error, result) });
+//
+//  }, false); ------------------ This works-----------------
+    
+   
+//    var widget = cloudinary.createUploadWidget({ upload_preset: 'a5vxnzbp'},
+//      function(error, result) {console.log(error, result)});
+//
+//widget.open(); ------------- This works when added the name---------
+    
+
+
 
         
         var currentdate = new Date();

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('whatsPup', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'restangular', 'ui.router', 'ui.bootstrap', 'firebase', ])
+angular.module('whatsPup', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'restangular', 'ui.router', 'ui.bootstrap', 'firebase'])
 
 .constant('FIREBASE_URL', 'https://whatspup.firebaseio.com/')
 
@@ -147,9 +147,29 @@ angular.module('whatsPup', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', '
         return fbUser;
     }
 });
-
-// .factory('newVisit', ['FIREBASE_URL', function(){
-//     return function name(){
-
-//     };
-// }])
+//
+//.factory('Upload', function () {
+//    
+//    return {
+//   
+//        uploadImg : function () {
+//            
+//       document.getElementById("upload_widget_opener").addEventListener("click", function() {
+//            cloudinary.openUploadWidget({ 
+//                cloud_name: 'whatspup',
+//                upload_preset: 'npnf6uka'
+//            }, 
+//            function(error, result) { 
+//                console.log(result[0].url)
+////                self.image = result[0].url;
+////                return self.image 
+//                return self.image = result[0].url
+//            });
+//            
+//        }, false);
+//}
+//    }
+//
+//    
+//});
+//
