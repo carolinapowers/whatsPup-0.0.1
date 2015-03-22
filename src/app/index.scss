@@ -19,41 +19,22 @@ html,
 main {
     /* important */
     
-    height: 100%;
+ 
 }
+
+
 
 body {
     font-family: 'Open Sans', sans-serif;
-    // background-image: url("http://i59.tinypic.com/25ukwur.jpg");
-    // background-image: url("https://animalfoundationofamerica.com/wp-content/uploads/2014/04/High-Quality-Dog-Photo-194028b.jpg");
-    background-image: url("http://www.thedogtrainingsecret.com/images/DSC_4423.JPG");
-    margin-bottom: 5%;
+    background-image: url("http://i58.tinypic.com/k9avb6.jpg");
     min-height: 100%;
+    min-width: 100%;
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: center center;  
 }
 
-
-.cd-fixed-bg {
-    min-height: 100%;
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-
-.cd-fixed-bg.cd-bg-1 {
-    
-margin-bottom: 5%;
-    background-position: 0 5px ;
-    
-}
-
-.cd-scrolling-bg {
-    min-height: 100%;
-}
 
 .mask {
     position: fixed;
@@ -64,10 +45,15 @@ margin-bottom: 5%;
     width: auto;
     height: auto;
     z-index: -99;
-    background-color: #eb9565;
-    background-image: url(http://andershede.com/wp-content/uploads/2014/07/Fermaten.svg) no-repeat fixed;
-    opacity: 0.5;
+    background-color: #eb9565; 
+    opacity: 0.5; 
 }
+
+
+.cd-fixed-bg.cd-bg-1 {
+    margin-bottom: 5%;   
+}
+
 
 video#bgvid {
     position: fixed;
@@ -82,78 +68,72 @@ video#bgvid {
 }
 
 .whitelogo {
-overflow: hidden;
-  margin-top: 10%;
-  margin-left: 42%;
-  text-align: center;
+    overflow: hidden;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    text-align: center;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 1px;
 }
 
 .whitelogo p {
     font-size: 2.5em;
+    margin: 0;
 }
+
 .loginform {
-    margin-top: 1%;
+    margin-top: 8em;
     margin-left: auto;
     margin-right: auto;
-    width: 343px;
-    height: 300px;
+    width: 23em;
+    height: 28em;
     padding: 30px;
-    border: 1px solid rgba(0, 0, 0, .2);
-    border-radius: 5px;
     background-clip: padding-box;
-    background: rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 13px 3px rgba(0, 0, 0, .5);
+    background: rgba(0, 0, 0, 0.4);
     overflow: hidden;
     text-align: center;
 }
 
 .fieldsettings {
-    padding: 7em 12% 2%;
+    padding: 5em 6% 2%;
 }
 
-.clientlist {
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-}
 
 .clientlist h1 {
     text-align: center;
-  display: block;
-  color: #FFF;
+    display: block;
+    color: #fff;
 }
 
 .addclient-submitbtn {
     text-align: center;
 }
 
-.clients {
-    margin: auto;
-}
-
 
 .newclienteven {
     display: inline-block;
-    background-color: rgba(0, 0, 0, .6);
-    opacity: 0.6;
+    background-color: rgba(0, 0, 0, 0.6);
     margin-top: 1em;
     margin-left: 10%;
     padding: 2em;
     width: 80%;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
-    color: white;
+    font-weight: 400;  
+    color: #fff;
+    line-height: 3ex;
+    letter-spacing: 0.1ex;
 }
 
-// .newclienteven p {
-//     color: #FFF;
-// }
-
+.clientname{
+    font-size: 1.3em;  
+}
 .btn {
     border-radius: 0;
 }
 
 input {
     border-radius: 0;
+    margin-top: 1ex;
 }
 
 .deletebtn,
@@ -168,16 +148,16 @@ form a:hover {
 }
 
 .fblogin {
-    font-size: 1.4em;
+    font-size: 1.3em;
     color: #fff;
     font-weight: 200;
+    margin-top: 2.5ex;
+    line-height: 3ex;
     }
 
 
 .sitterbtn {
-    margin-top: 2em;
-    border: 1px solid #000;
-    border-radius: 2px;
+    margin-top: 2.4ex;
     background-color: cornflowerblue;
     color: #fff;
     font-size: 1.3em;
@@ -191,16 +171,82 @@ form a:hover {
 }
 
 .flogin-icon {
-background-color: #3b5998;
+  background-color: #3b5998;
   padding: 0.5em 1em;
   float: left;
   display: inline-block;
 }
 
 .flogin-text {
-      display: inline-block;
-  padding: 0.5em;
+    display: inline-block;
+    padding: 0.5em;
 }
 .clients {
     clear: both;
+}
+
+.newvisitctn {
+    height: 160%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding-top: 4em;
+    padding-bottom: 3em;
+    padding-left: 4em;
+    margin-top: 1em;
+    margin-bottom: 13%;
+}
+
+.test {
+    height: 160%;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2em 4em 2em;    
+    margin-top: 1em;
+    
+}
+
+label {
+    color: lightgray;
+    font-size: 1.2em;
+}
+
+
+.newvisit-submitbtn {
+    text-align: center;
+    box-sizing: border-box;
+    clear: both;
+    padding-top: 3ex;
+}
+
+.checkbox {
+    padding-bottom: 0.5em;
+}
+
+
+/**********Media Query*********/
+
+@media screen and (max-width:768px) {
+    
+  
+}
+
+@media screen and (max-width: 481px) {
+
+   
+    .cd-fixed-bg {
+        margin-left: -15px;
+        margin-right: -15px;               
+}
+    .newvisitctn {
+        padding-left: 0;
+        margin-bottom: 30%;
+    }
+}
+
+@media screen and (max-width: 321px) {
+    
+    .loginform {
+    margin-top: 8em;
+    width: 21em;
+    height: 27em;
+    padding: 2em 1em 0;
+}
 }

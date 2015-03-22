@@ -1,22 +1,19 @@
 
-<div class="video-container">
+<div class="video-container maindiv">
         <div class="mask"></div>
         <video autoplay loop poster="polina.jpg" id="bgvid">
             <source src="http://ak8.picdn.net/shutterstock/videos/4486523/preview/stock-footage-cute-puppy-dog-slow-motion-running-across-grass-shot-over-cranked-on-red-digital-cinema-camera-at.mp4" type="video/mp4" type="video/mp4">
         </video>
 </div>
-<div class="poster hidden">
-        <img src="http://www.desktopaper.com/wp-content/uploads/awesome-beautiful-dogs-hd-free-wallpaper.jpg" alt="">
-</div>
 
-
-<div class="whitelogo">
-        <p style="color: #fff" class="navbar-brand" ui-sref="home"> <i class="fa fa-paw" style="color: #fff"></i>whatsPup</p>
-</div>
 <div class="title-container">
     <div class="loginform" ng-submit="client.addClient(app.newClient)">
+    <div class="whitelogo">
+        <p style="color: #fff" ui-sref="home"> <i class="fa fa-paw" style="color: #fff"></i>whatsPup</p>
+</div>
     
         <p class="fblogin">A web application for Pet Sitters to provide real-time updates to their clients.</p>
+        <p class="fblogin">Become a member with Facebook.</p>
         <a ng-click="app.sitterlogin()">
             <div class="sitterbtn">
             <div class="flogin-icon"><i class="fa fa-facebook"></i></div>

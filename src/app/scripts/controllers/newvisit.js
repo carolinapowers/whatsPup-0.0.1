@@ -29,8 +29,9 @@ angular.module('whatsPup')
             function(error, result) { 
                 console.log(result[0].url)
                 self.image = result[0].url;
+                return self.image 
             });
-            return self.image 
+
         }, false);
 
         
