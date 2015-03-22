@@ -3,10 +3,12 @@ angular.module('whatsPup')
    
     var self = this;
     this.sentEmail = SendEmail.sentEmail;
-    this.widget = SendEmail.widget;
-    
+    this.getEmail = SendEmail.getEmail;
+//    this.widget = SendEmail.widget;
+//    
   
    
+    
     
       document.getElementById("upload_widget_opener").addEventListener("click", function() {
             cloudinary.openUploadWidget({ 

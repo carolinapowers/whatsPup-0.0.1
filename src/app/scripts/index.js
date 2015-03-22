@@ -177,6 +177,8 @@ angular.module('whatsPup', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', '
     var self = this;
     var currentdate = new Date();
     var time = (currentdate.getMonth() + 1) + "/" + currentdate.getDate() + "/" + currentdate.getFullYear() + " at " + currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
+    
+    
     return {
 //         widget : function () { document.getElementById("upload_widget_opener").addEventListener("click", function() {
 //            cloudinary.openUploadWidget({ 
