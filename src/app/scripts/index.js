@@ -147,31 +147,6 @@ angular.module('whatsPup', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', '
         return fbUser;
     }
 })
-//
-//.factory('Upload', function () {
-//    
-//    return {
-//   
-//        uploadImg : function () {
-//            
-//       document.getElementById("upload_widget_opener").addEventListener("click", function() {
-//            cloudinary.openUploadWidget({ 
-//                cloud_name: 'whatspup',
-//                upload_preset: 'npnf6uka'
-//            }, 
-//            function(error, result) { 
-//                console.log(result[0].url)
-////                self.image = result[0].url;
-////                return self.image 
-//                return self.image = result[0].url
-//            });
-//            
-//        }, false);
-//}
-//    }
-//
-//    
-//});
 
 .factory ('SendEmail', function ($http) {
     var self = this;
@@ -180,21 +155,7 @@ angular.module('whatsPup', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', '
     
     
     return {
-//         widget : function () { document.getElementById("upload_widget_opener").addEventListener("click", function() {
-//            cloudinary.openUploadWidget({ 
-//                cloud_name: 'jaredstevick',
-//                upload_preset: 'xnpszqid'
-//            }, 
-//            function(error, result) { 
-//                console.log(result[0].url)
-//                
-//                self.image = result[0].url;
-//                return self.image;
-//            });
-////            return self.image
-////            console.log(self.image);
-//       }, false);
-//                              },
+
     
         sentEmail: function () {
             $http({
