@@ -103,10 +103,10 @@
         <div class="cd-bg-1 newclienteven">
             <div class="cd-scrolling-bg cd-color-2">
                 <p class="clientname"><big><strong>{{ clients.name }}</strong></big></p>
-                <p><strong>Pet:</strong> {{ clients.pet }}</p>
-                <p><strong>Phone:</strong><a class="clientAtag" href="tel: {{ clients.phone }}">{{clients.phone}}</a></p>
-                <p><strong>E-mail:</strong><a class="clientAtag" href="mailto: {{clients.email}}"> {{ clients.email }}</a></p>
-                <p><strong>Address:</strong><a class="clientAtag" href="http://maps.google.com/?q={{ clients.street }} {{ clients.city }} {{clients.state}} {{clients.zip }}">{{ clients.street }} {{ clients.city }} {{clients.state}} {{clients.zip }}</a></p>
+                <p><strong>Pet: </strong> {{ clients.pet }}</p>
+                <p class="clientAtag"><strong>Phone: </strong><a class="clientAtag" href="tel: {{ clients.phone }}">{{clients.phone}}</a></p>
+                <p class="clientAtag"><strong>E-mail: </strong><a class="clientAtag" href="mailto: {{clients.email}}"> {{ clients.email }}</a></p>
+                <p class="clientAtag-address"><strong>Address: </strong><a class="clientAtag" href="http://maps.google.com/?q={{ clients.street }} {{ clients.city }} {{clients.state}} {{clients.zip }}">{{ clients.street }} {{ clients.city }} {{clients.state}} {{clients.zip }}</a></p>
                 <a ui-sref="newvisit({user: client.user.$id, clientId: clients.$id}) " class="btn btn-md btn-info newvisitbtn">new visit</a>
                 <a ng-click="client.deleteClient(clients) " class="btn btn-md btn-danger deletebtn">delete</a>
                 </p>

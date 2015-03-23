@@ -41,6 +41,11 @@ angular.module('whatsPup', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', '
         controllerAs: 'newvisit'
     })
     
+    .state('about', {
+        templateUrl: 'app/view/about.html',
+        url:'/about'
+    })
+    
 
     $urlRouterProvider.otherwise('/');
 })
