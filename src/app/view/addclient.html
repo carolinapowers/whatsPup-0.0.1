@@ -16,7 +16,7 @@
             <div class="test" ng-show="show">
                 <div class="col-md-5">
                     <div class="form-group">
-                        <label class="control-label" for="name">Name</label>
+                        <label class="control-label" for="name">Name <small style="color:#d9534f">(Required)</small></label>
                         <div class="col-md-">
                             <input ng-model="client.newClient.name" id="name" name="name" type="text" placeholder="Full Name" class="form-control input-md ng-pristine ng-invalid" required>
                         </div>
@@ -30,7 +30,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label" for="email">Email</label>
+                        <label class="control-label" for="email">Email <small style="color:#d9534f">(Required)</small></label>
                         <div class="">
                             <input ng-model="client.newClient.email" id="email" name="email" type="email" placeholder="email@example.com" class="form-control input-md" required>
                         </div>
