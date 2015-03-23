@@ -1,7 +1,7 @@
 <div class="blue-mask"></div>
 <div class="container-fluid backgroundctn cd-fixed-bg cd-bg-1 ">
 
-    <form class="form-horizontal" ng-submit="client.addClient(client.newClient)" novalidate>
+    <form name="formHorizontal" class="formHorizontal" ng-submit="formHorizontal.$valid && client.addClient(client.newClient)" novalidate>
 
         <fieldset class="fieldsettings">
             <div class="row ">
@@ -18,7 +18,7 @@
                     <div class="form-group">
                         <label class="control-label" for="name">Name</label>
                         <div class="col-md-">
-                            <input ng-model="client.newClient.name" id="name" name="name" type="text" placeholder="Full Name" class="form-control input-md" required>
+                            <input ng-model="client.newClient.name" id="name" name="name" type="text" placeholder="Full Name" class="form-control input-md ng-pristine ng-invalid" required>
                         </div>
                     </div>
 
@@ -32,7 +32,7 @@
                     <div class="form-group">
                         <label class="control-label" for="email">Email</label>
                         <div class="">
-                            <input ng-model="client.newClient.email" id="email" name="email" type="text" placeholder="email@example.com" class="form-control input-md" required>
+                            <input ng-model="client.newClient.email" id="email" name="email" type="email" placeholder="email@example.com" class="form-control input-md" required>
                         </div>
                     </div>
 
