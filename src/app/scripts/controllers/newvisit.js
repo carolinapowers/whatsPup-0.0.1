@@ -1,8 +1,10 @@
 
 angular.module('whatsPup')
-    .controller('NewVisitCtrl', function (Auth, $state, $stateParams, $firebaseObject, $http) {
+    .controller('NewVisitCtrl', function (Auth, SendEmail, $state, $stateParams, $firebaseObject, $http) {
         var self = this;
         this.loggedIn = Auth.loggedIn;
+        this.sentEmail = SendEmail.sentEmail;
+//        this.uploadImg = Upload.uploadImg;
 
         var clientVisit = new Firebase('https://whatspup.firebaseio.com/Clients/' + $stateParams.user + '/' + $stateParams.clientId);
         console.log(clientVisit);
@@ -20,19 +22,24 @@ angular.module('whatsPup')
         console.log(this.sendEmail);
 
         this.image = '';
+    
 
      
         document.getElementById("upload_widget_opener").addEventListener("click", function() {
             cloudinary.openUploadWidget({ 
-                cloud_name: 'jaredstevick',
-                upload_preset: 'xnpszqid'
+                cloud_name: 'whatspup',
+                upload_preset: 'npnf6uka'
             }, 
             function(error, result) { 
                 console.log(result[0].url)
-                self.image = result[0].url;
+                alert("Your image was uploaded successfully");
+//                self.image = result[0].url;
+//                return self.image 
+                return self.image = result[0].url
             });
-            return self.image 
+            
         }, false);
+    
 
         
         var currentdate = new Date();

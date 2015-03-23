@@ -6,5 +6,9 @@ angular.module('whatsPup')
         var ref = new Firebase("https://whatspup.firebaseio.com/");
 
         this.sitterlogin = Auth.sitterlogin;
+    
+    $(window).load(function() {
+	$(".loader").fadeOut(1700);
+})
 
     });

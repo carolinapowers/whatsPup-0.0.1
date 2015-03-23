@@ -1,7 +1,7 @@
 <div class="blue-mask"></div>
-<div class="container-fluid cd-fixed-bg cd-bg-1 ">
+<div class="container-fluid backgroundctn cd-fixed-bg cd-bg-1 ">
 
-    <form class="form-horizontal" ng-submit="client.addClient(client.newClient) ">
+    <form name="formHorizontal" class="formHorizontal" ng-submit="formHorizontal.$valid && client.addClient(client.newClient)" novalidate>
 
         <fieldset class="fieldsettings">
             <div class="row ">
@@ -16,9 +16,9 @@
             <div class="test" ng-show="show">
                 <div class="col-md-5">
                     <div class="form-group">
-                        <label class="control-label" for="name">Name</label>
+                        <label class="control-label" for="name">Name <small style="color:#d9534f">(Required)</small></label>
                         <div class="col-md-">
-                            <input ng-model="client.newClient.name" id="name" name="name" type="text" placeholder="Full Name" class="form-control input-md">
+                            <input ng-model="client.newClient.name" id="name" name="name" type="text" placeholder="Full Name" class="form-control input-md ng-pristine ng-invalid" required>
                         </div>
                     </div>
 
@@ -30,9 +30,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label" for="email">Email</label>
+                        <label class="control-label" for="email">Email <small style="color:#d9534f">(Required)</small></label>
                         <div class="">
-                            <input ng-model="client.newClient.email" id="email" name="email" type="text" placeholder="email@example.com" class="form-control input-md">
+                            <input ng-model="client.newClient.email" id="email" name="email" type="email" placeholder="email@example.com" class="form-control input-md" required>
                         </div>
                     </div>
 
@@ -94,7 +94,7 @@
 
 <div class="clientscontainer cd-fixed-bg cd-bg-1 ">
     <hr>
-    <span class="clientlist"><h1><strong>Clients</strong></h1></span>
+    <span class="clientlist"><h1>Clients</h1></span>
     <hr>
     <!-- <a href="">
         <button class="btn btn-lg btn-success newClient pull-right">new client</button>
@@ -103,10 +103,10 @@
         <div class="cd-bg-1 newclienteven">
             <div class="cd-scrolling-bg cd-color-2">
                 <p class="clientname"><big><strong>{{ clients.name }}</strong></big></p>
-                <p><strong>Pet:</strong> {{ clients.pet }}</p>
-                <p><strong>Phone:</strong> {{ clients.phone }}</p>
-                <p><strong>E-mail:</strong> {{ clients.email }}</p>
-                <p><strong>Address:</strong> {{ clients.street }} {{ clients.city }} {{clients.state}} {{clients.zip }}</p>
+                <p><strong>Pet: </strong> {{ clients.pet }}</p>
+                <p class="clientAtag"><strong>Phone: </strong><a class="clientAtag" href="tel: {{ clients.phone }}">{{clients.phone}}</a></p>
+                <p class="clientAtag"><strong>E-mail: </strong><a class="clientAtag" href="mailto: {{clients.email}}"> {{ clients.email }}</a></p>
+                <p class="clientAtag-address"><strong>Address: </strong><a class="clientAtag" href="http://maps.google.com/?q={{ clients.street }} {{ clients.city }} {{clients.state}} {{clients.zip }}">{{ clients.street }} {{ clients.city }} {{clients.state}} {{clients.zip }}</a></p>
                 <a ui-sref="newvisit({user: client.user.$id, clientId: clients.$id}) " class="btn btn-md btn-info newvisitbtn">new visit</a>
                 <a ng-click="client.deleteClient(clients) " class="btn btn-md btn-danger deletebtn">delete</a>
                 </p>
