@@ -1,25 +1,14 @@
 'use strict';
 
 angular.module('whatsPup')
-    .controller('AuthCtrl', function ($firebaseArray, $firebaseObject) {
+    .controller('AuthCtrl', function ($firebaseArray, $firebaseObject, Auth) {
+
         var ref = new Firebase("https://whatspup.firebaseio.com/");
 
-        this.login = function () {
-
-            ref.authWithOAuthPopup("facebook", function (error, authData) {
-                if (error) {
-                    console.log("Login Failed!", error);
-                } else {
-                    console.log("Authenticated successfully with payload:", authData);
-                }
-                //                remember: "sessionOnly"
-            })
-        };
-
-        this.logout = function () {
-
-            ref.unauth();
-        }
-
+        this.sitterlogin = Auth.sitterlogin;
+    
+    $(window).load(function() {
+	$(".loader").fadeOut(1700);
+})
 
     });

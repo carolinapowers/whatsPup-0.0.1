@@ -1,57 +1,26 @@
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#"><i class="fa fa-paw"></i> whatsPup</a>
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav pull-right">
-                <li class="active"><a href="#">About Us</a>
-                </li>
-                <li class="active"><a href="#">Contact Us</a>
-                </li>
-            </ul>
-        </div>
-        <!--/.navbar-collapse -->
-    </div>
-</div>
-
-
-
-<div class="homepage-hero-module">
-    <div class="video-container">
+<div class="loader"></div>
+<div class="mainctn">
+<div class="video-container maindiv">
         <div class="mask"></div>
         <video autoplay loop poster="polina.jpg" id="bgvid">
-            <source src="http://ak8.picdn.net/shutterstock/videos/4486523/preview/stock-footage-cute-puppy-dog-slow-motion-running-across-grass-shot-over-cranked-on-red-digital-cinema-camera-at.mp4" type="video/mp4" type="video/mp4">
+            <source src="http://res.cloudinary.com/jaredstevick/raw/upload/v1427133847/ncmnv3oglnmt0xlv81g9.mp4" type="video/mp4">
         </video>
+</div>
 
-    </div>
-    <div class="filter"></div>
-    <div class="muted">
-        <video autoplay loop class="fillWidth">
-            <!--                             <source src="http://ak8.picdn.net/shutterstock/videos/4486523/preview/stock-footage-cute-puppy-dog-slow-motion-running-across-grass-shot-over-cranked-on-red-digital-cinema-camera-at.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.</video>-->
-    </div>
-    <div class="poster hidden">
-        <img src="http://www.desktopaper.com/wp-content/uploads/awesome-beautiful-dogs-hd-free-wallpaper.jpg" alt="">
-    </div>
-</div>
-</div>
 <div class="title-container">
-    <form ng-submit="client.addClient(app.newClient)">
-
-        <p class="fblogin"> Login with Facebook</p>
-
-        <a ng-click="app.login()">
-            <div class="sitterbtn" ui-sref="client">I'm a Pet Sitter</div>
+    <div class="loginform" ng-submit="client.addClient(app.newClient)">
+    <div class="whitelogo">
+        <p style="color: #fff" ui-sref="home"> <i class="fa fa-paw" style="color: #fff"></i>whatsPup</p>
+</div>
+    
+        <p class="fblogin">A web application for Pet Sitters to provide real-time updates to their clients.</p>
+        <p class="fblogin">Become a member with Facebook.</p>
+        <a ng-click="app.sitterlogin()">
+            <div class="sitterbtn">
+            <div class="flogin-icon"><i class="fa fa-facebook"></i></div>
+            <div class="flogin-text">Login</div>
+            </div>
         </a>
-        <a>
-            <div class="ownerbtn" ui-sref="owner">I'm a Pet Owner</div>
-        </a>
-
-    </form>
+    </div>
+</div>
 </div>
