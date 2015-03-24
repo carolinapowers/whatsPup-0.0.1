@@ -2,8 +2,14 @@
 
 angular.module('whatsPup')
     .controller('AddClientCtrl', function ($firebaseArray, $firebaseObject, Auth, $state, $stateParams) {
+    
         var self = this;
-
+        this.loggedIn = Auth.loggedIn;
+    
+        if (this.loggedIn() == undefined) {
+            $state.go('home');
+        }
+        
         var userUid = Auth.onAuth(function (user) {
             self.user = user;
             if (user === null) {
@@ -15,7 +21,7 @@ angular.module('whatsPup')
         });
 
         var userInfo = new Firebase('https://whatspup.firebaseio.com/Clients/' + self.user.$id);
-        this.loggedIn = Auth.loggedIn;
+       
 
 
         var authData = userInfo.getAuth();

@@ -11,7 +11,7 @@
        </div>
        <div collapse="!isCollapsed" class="navbar-collapse collapse navHeaderCollapse">
            <ul ng-click="isCollapsed = !isCollapsed" class="nav navbar-nav navbar-right">
-               <li><a>About Us</a>
+               <li ui-sref="about"><a>About Us</a>
                </li>
                <li ng-show="nav.loggedIn()" class="" ><a href="#" ng-click="nav.logout()">Logout</a>
                </li>

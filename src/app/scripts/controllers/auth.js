@@ -7,8 +7,9 @@ angular.module('whatsPup')
 
         this.sitterlogin = Auth.sitterlogin;
     
-//   $('#bgvid').hide().removeClass('hide');
 
+var body = document.getElementsByTagName('body')  
+    
 body.onload = pre_loader;
 
 function pre_loader() {
