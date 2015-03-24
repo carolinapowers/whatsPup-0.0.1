@@ -56,7 +56,8 @@ main {
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-position: center center;     
+    background-position: center center;
+    min-height: 1400px;
 }
 
 .backgroundctn.about {
@@ -138,8 +139,6 @@ video#bgvid {
     text-align: center;
 }
 
-
-
 .newclienteven {
     display: inline-block;
     background-color: rgba(0, 0, 0, 0.6);
@@ -158,21 +157,22 @@ video#bgvid {
     background-color: rgba(0, 0, 0, 0.6);
     margin-top: 2em;
     padding: 3em 2em;
-    width: 55%;
+    width: 100%;
     font-weight: 400;  
     color: #fff;
     line-height: 3ex;
     letter-spacing: 0.1ex;
-    margin-left: 5em;
-    
+    margin-left: 5em;  
 }
+
+ 
 
 .about-row2 {
     display: inline-block;
     margin-top: 5em;
     background-color: rgba(0, 0, 0, 0.6);
     padding: 3em 2em;
-    width: 90%;
+    width: 100%;
     font-weight: 400;  
     color: #fff;
     line-height: 3ex;
