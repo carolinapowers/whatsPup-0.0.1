@@ -56,8 +56,7 @@ main {
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-position: center center;  
-   
+    background-position: center center;     
 }
 
 .backgroundctn.about {
@@ -73,19 +72,6 @@ main {
 //	height: 100%;
 //	z-index: 9999;
 //	background: url('http://www.mytreedb.com/uploads/mytreedb/loader/ajax_loader_gray_350.gif') 50% 50% no-repeat rgb(249,249,249);
-//}
-
-//.mask {
-//    position: fixed;
-//    right: 0;
-//    bottom: 0;
-//    min-width: 100%;
-//    min-height: 100%;
-//    width: auto;
-//    height: auto;
-//    z-index: -99;
-//    background-color: #eb9565; 
-//    opacity: 0.5; 
 //}
 
 
@@ -312,10 +298,11 @@ label {
     padding-bottom: 3em;
     }
     
-   .mask {
-       display: none;
-       
-   }
+    .backgroundctn {
+    max-height: 100vh;
+    overflow:scroll;  
+}
+
     video#bgvid{
         display:none;
     } 
@@ -329,6 +316,9 @@ label {
 
 @media screen and (max-width: 481px) {
 
+    .logout {
+        display: none;
+    }
    
     .cd-fixed-bg {
         margin-left: -15px;
@@ -344,6 +334,9 @@ label {
         padding-left: 1em;
         padding-right:1em;
     }
+    
+   
+    
 }
 
 @media screen and (max-width: 321px) {
