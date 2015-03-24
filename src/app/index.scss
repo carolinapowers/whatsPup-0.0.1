@@ -51,19 +51,22 @@ main {
 .backgroundctn {
     
     background-image: url("http://i58.tinypic.com/k9avb6.jpg");
-    min-height: 100%;
+    min-height: 100vh;
     min-width: 100%;
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center center;
-    min-height: 1400px;
+  
 }
 
 .backgroundctn.about {
     height: 800px;
 }
 
+.hide {
+    visibility: hidden;
+}
 
 //.loader {
 //	position: fixed;
