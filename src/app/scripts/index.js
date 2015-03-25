@@ -27,13 +27,6 @@ angular.module('whatsPup', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', '
         controllerAs: 'nav'
     })
 
-    .state('owner', {
-        url: '/owner',
-        templateUrl: 'app/view/ownerpage.html',
-        controller: 'OwnerBtnCtrl',
-        controllerAs: 'ownerbtn'
-    })
-
     .state('newvisit', {
         templateUrl: 'app/view/newvisit.html',
         url: '/newvisit/:user/:clientId/',
@@ -46,7 +39,6 @@ angular.module('whatsPup', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', '
         url:'/about'
     })
     
-
     $urlRouterProvider.otherwise('/');
 })
 

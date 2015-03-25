@@ -7,8 +7,15 @@ angular.module('whatsPup')
 
         this.sitterlogin = Auth.sitterlogin;
     
-    $(window).load(function() {
-	$(".loader").fadeOut(1700);
-})
+
+var body = document.getElementsByTagName('body')  
+    
+body.onload = pre_loader;
+
+function pre_loader() {
+
+document.getElementById('bgvid').style.visibility='hidden';
+
+}
 
     });
