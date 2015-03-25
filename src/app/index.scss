@@ -53,15 +53,17 @@ main {
     background-image: url("http://i58.tinypic.com/k9avb6.jpg");
     min-height: 100vh;
     min-width: 100%;
+    overflow: scroll;
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center center;
-  
+    
 }
 
 .backgroundctn.about {
-    height: 800px;
+    height:760px;
+    padding-bottom: 5em;    
 }
 
 .hide {
@@ -142,34 +144,6 @@ video#bgvid {
     color: #fff;
     line-height: 3ex;
     letter-spacing: 0.1ex;
-}
-
-.about-row {
-    display: inline-block;
-    background-color: rgba(0, 0, 0, 0.6);
-    margin-top: 3em;
-    padding: 3em 2em;
-    width: 100%;
-    font-weight: 400;  
-    color: #fff;
-    line-height: 3ex;
-    letter-spacing: 0.1ex;
-    margin-left: 5em;  
-}
-
- 
-
-.about-row2 {
-    display: inline-block;
-    margin-top: 3em;
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 3em 2em;
-    width: 100%;
-    font-weight: 400;  
-    color: #fff;
-    line-height: 3ex;
-    letter-spacing: 0.1ex;
-    margin-right: 5em;
 }
 
 .clientname{
@@ -276,13 +250,16 @@ label {
 
 .about {
    display: inline-block;
-   background-color: rgba(0, 0, 0, 0.6);
-   margin: auto;
+   background-color: rgba(0, 0, 0, 0.6);  
    font-weight: 400;  
    color: #fff;
-   line-height: 3ex;
+   line-height: 3.3ex;
    text-align: center;
+   padding: 1em;
 
+   h2 {
+       padding-bottom: 0.5em;
+   }
    img {
        margin: 1em;
        }
@@ -291,10 +268,28 @@ label {
    }    
 }    
 
+.carolina {
+    margin-right: 2em;
+}
+
 .techicon {
    height: 50px;
    width: 50px;
 }
+
+.techicon2 {
+height: 40px;
+width: 40px;
+ .img {
+     margin: 0em;
+ }
+}
+
+
+.bio {
+        width: 41%;
+        margin:0 1em;
+    }
 
 /**********Media Query*********/
 
@@ -331,6 +326,11 @@ label {
 }
 
 @media screen and (max-width: 481px) {
+    
+    .bio {
+        width: 80%;
+        margin:0 auto;
+    }
 
     .logout {
         display: none;
