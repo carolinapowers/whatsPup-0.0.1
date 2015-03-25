@@ -4,7 +4,11 @@ angular.module('whatsPup')
         var self = this;
         this.loggedIn = Auth.loggedIn;
         this.sentEmail = SendEmail.sentEmail;
-//        this.uploadImg = Upload.uploadImg;
+        this.loggedIn = Auth.loggedIn;
+    
+        if (this.loggedIn() == undefined) {
+            $state.go('home');
+        }
 
         var clientVisit = new Firebase('https://whatspup.firebaseio.com/Clients/' + $stateParams.user + '/' + $stateParams.clientId);
         console.log(clientVisit);
