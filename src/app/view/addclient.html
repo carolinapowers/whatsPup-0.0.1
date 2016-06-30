@@ -1,12 +1,12 @@
-<div class="blue-mask"></div>
-<div class="container-fluid backgroundctn cd-fixed-bg cd-bg-1 ">
 
-    <form name="formHorizontal" class="formHorizontal" ng-submit="formHorizontal.$valid && client.addClient(client.newClient)" novalidate>
+<div class="container-fluid backgroundctn cd-fixed-bg cd-bg-1 ">
+    
+        <form name="formHorizontal" class="formHorizontal" ng-submit="formHorizontal.$valid && client.addClient(client.newClient)" novalidate>
 
         <fieldset class="fieldsettings">
             <div class="row ">
                 <a href=" " ng-show="show " ng-click="show=! show " class="col-md-11 pull-right ">
-                    <button id="Cancel " name="Cancel " class="btn btn-danger btn-lg pull-right ">cancel</button>
+                    <button id="Cancel" name="Cancel " class="btn btn-danger btn-lg pull-right ">cancel</button>
                 </a>
                 <a href=" ">
                     <button ng-hide="show " ng-click="show=! show " class="btn btn-lg btn-success newClient pull-right ">add client</button>
@@ -23,9 +23,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label" for="pet">Pet's Name</label>
+                        <label class="control-label" for="pet">Pet's Name(s)</label>
                         <div class="">
-                            <input ng-model="client.newClient.pet" id="pet" name="pet" type="text" placeholder="Pet's Name" class="form-control input-md">
+                            <input ng-model="client.newClient.pet" id="pet" name="pet" type="text" placeholder="Pet's Name(s)" class="form-control input-md">
                         </div>
                     </div>
 
@@ -102,7 +102,7 @@
     <div ng-repeat="clients in client.obj" class=" col-md-6 cd-fixed-bg cd-bg-1">
         <div class="cd-bg-1 newclienteven">
             <div class="cd-scrolling-bg cd-color-2">
-                <p class="clientname"><big><strong>{{ clients.name }}</strong></big></p>
+                <p class="clientname"><big><strong>{{ clients.name }} {{clients.firstName}} {{clients.lastName}}</strong></big></p>
                 <p><strong>Pet: </strong> {{ clients.pet }}</p>
                 <p class="clientAtag"><strong>Phone: </strong><a class="clientAtag" href="tel: {{ clients.phone }}">{{clients.phone}}</a></p>
                 <p class="clientAtag"><strong>E-mail: </strong><a class="clientAtag" href="mailto: {{clients.email}}"> {{ clients.email }}</a></p>
@@ -115,4 +115,5 @@
 
     </div>
 </div>
+
 </div>

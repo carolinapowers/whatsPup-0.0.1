@@ -4,27 +4,24 @@ angular.module('whatsPup')
         var self = this;
         this.loggedIn = Auth.loggedIn;
         this.sentEmail = SendEmail.sentEmail;
-//        this.uploadImg = Upload.uploadImg;
+        this.loggedIn = Auth.loggedIn;
+    
+        if (this.loggedIn() == undefined) {
+            $state.go('home');
+        }
 
         var clientVisit = new Firebase('https://whatspup.firebaseio.com/Clients/' + $stateParams.user + '/' + $stateParams.clientId);
         console.log(clientVisit);
 
         this.visitObj = $firebaseObject(clientVisit);
 
-
-
         this.visitObj.$loaded().then(function (data) {
             console.log(data.email);
             return self.getEmail = data.email;
         })
-        console.log(self.getEmail);
-
-        console.log(this.sendEmail);
 
         this.image = '';
-    
 
-     
         document.getElementById("upload_widget_opener").addEventListener("click", function() {
             cloudinary.openUploadWidget({ 
                 cloud_name: 'whatspup',
@@ -39,97 +36,27 @@ angular.module('whatsPup')
             });
             
         }, false);
-    
 
-        
         var currentdate = new Date();
         var time = (currentdate.getMonth() + 1) + "/" + currentdate.getDate() + "/" + currentdate.getFullYear() + " at " + currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds(); //get time
+    
         
         this.sentEmail = function () {
+            var visitData = {
+                to: this.getEmail,
+                time: time,
+                food: this.food ? "Yes": "No",
+                water: this.water ? "Yes": "No",
+                play: this.play ? this.play: "N/A",    
+                treats: this.treats ? "Yes": "No",
+                meds: this.meds ? this.meds: "N/A",
+                message: this.message ? this.message: "Your Pet misses you!"
+            }
+            
             $http({
                 method: "POST",
-                url: "https://mandrillapp.com/api/1.0/messages/send-template.json",
-                data: {
-                    'key': 'SjfF7oGr1BHLUnBlnSF20A',
-                    "template_name": "whatspup1",
-                    "template_content": [
-                        {
-                            "name": "example name",
-                            "content": "example content"
-                        }
-                    ],
-                    'message': {
-                        'from_email': 'whatspupupdate@gmail.com',
-                        'from_name': 'WhatsPup',
-                        'headers': {
-                            'Reply-To': 'whatspupupdate@gmail.com'
-                        },
-                        
-                        'subject': 'New Visit Update from WhatsPup',
-                        
-                        'to': [
-                            {
-                                'email': this.getEmail,
-                                'name': 'name',
-                                'type': 'to'
-                        }],
-                    
-                    "global_merge_vars": [
-                        {
-                            "name": "time",
-                           "content": time
-                        },
-                        {
-                            "name": "food",
-                            "content": this.food
-                        },
-                        {
-                            "name": "water",
-                            "content": this.water
-                        },
-                        {
-                            "name": "play",
-                            "content": this.play
-                        },
-                        {
-                            "name": "treats",
-                            "content": this.treats
-                        },
-                        {
-                            "name": "meds",
-                            "content": this.meds
-                        },
-                        {
-                            "name": "mess",
-                            "content": this.mess
-                        },
-                        {
-                            "name": "packages",
-                            "content": this.packages
-                        },
-                        {
-                            "name": "mail",
-                            "content": this.mail
-                        },
-                        {
-                            "name": "plants",
-                            "content": this.plants
-                        },
-                        {
-                            "name": "other",
-                            "content": this.other
-                        },
-                        {
-                            "name": "message",
-                            "content": this.message
-                        },
-                        {
-                            "name": "image",
-                            "content": this.image
-                        }
-                    ]
-                    }
-                }
+                url: "http://localhost:8080/api/tables",
+                data: visitData        
             })
                 .success(function (response) {
                     alert('The visit has been saved. Thank you!'); // show success message
@@ -138,6 +65,5 @@ angular.module('whatsPup')
                 .error(function (response) {
                     alert('There was a problem sending the visit.');
                 });
-        }
-
+        };
     });
