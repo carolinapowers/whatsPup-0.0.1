@@ -50,9 +50,9 @@ angular.module('whatsPup')
                 play: this.play ? this.play: "N/A",    
                 treats: this.treats ? "Yes": "No",
                 meds: this.meds ? this.meds: "N/A",
-                mess: this.mess ? "Yes": "No",
+                mess: this.mess ? "Yes": "N/A",
                 mail: this.mail ? "Yes": "No",
-                packages: this.packages ? "Yes": "No", 
+                packages: this.packages ? "/Yes": " ", 
                 plants: this.plants ? "Yes": "No",
                 other: this.other ? "See Message": "No",
                 message: this.message ? this.message: "Your Pet misses you!"
