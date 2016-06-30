@@ -102,7 +102,7 @@
     <div ng-repeat="clients in client.obj" class=" col-md-6 cd-fixed-bg cd-bg-1">
         <div class="cd-bg-1 newclienteven">
             <div class="cd-scrolling-bg cd-color-2">
-                <p class="clientname"><big><strong>{{ clients.name }}</strong></big></p>
+                <p class="clientname"><big><strong>{{ clients.name }} {{clients.firstName}} {{clients.lastName}}</strong></big></p>
                 <p><strong>Pet: </strong> {{ clients.pet }}</p>
                 <p class="clientAtag"><strong>Phone: </strong><a class="clientAtag" href="tel: {{ clients.phone }}">{{clients.phone}}</a></p>
                 <p class="clientAtag"><strong>E-mail: </strong><a class="clientAtag" href="mailto: {{clients.email}}"> {{ clients.email }}</a></p>
