@@ -61,8 +61,8 @@ angular.module('whatsPup')
             
             $http({
                 method: "POST",
-                // url: "https://polar-scrubland-63183.herokuapp.com/api/email",
-                url: "http://localhost:8080/api/email",
+                url: "https://polar-scrubland-63183.herokuapp.com/api/email",
+                //url: "https://localhost:8080/api/email",
                 data: visitData        
             })
                 .success(function (response) {
