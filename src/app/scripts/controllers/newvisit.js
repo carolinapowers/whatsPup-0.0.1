@@ -50,12 +50,18 @@ angular.module('whatsPup')
                 play: this.play ? this.play: "N/A",    
                 treats: this.treats ? "Yes": "No",
                 meds: this.meds ? this.meds: "N/A",
+                mess: this.mess ? "Yes": "No",
+                mail: this.mail ? "Yes": "No",
+                packages: this.packages ? "Yes": "No", 
+                plants: this.plants ? "Yes": "No",
+                other: this.other ? "See Message": "No",
                 message: this.message ? this.message: "Your Pet misses you!"
             }
             
             $http({
                 method: "POST",
-                url: "http://localhost:8080/api/tables",
+                // url: "https://polar-scrubland-63183.herokuapp.com/api/email",
+                url: "http://localhost:8080/api/email",
                 data: visitData        
             })
                 .success(function (response) {
