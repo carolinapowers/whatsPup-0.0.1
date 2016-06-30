@@ -55,7 +55,8 @@ angular.module('whatsPup')
                 packages: this.packages ? "/Yes": " ", 
                 plants: this.plants ? "Yes": "No",
                 other: this.other ? "See Message": "No",
-                message: this.message ? this.message: "Your Pet misses you!"
+                message: this.message ? this.message: "Your Pet misses you!",
+                image: this.image
             }
             
             $http({
